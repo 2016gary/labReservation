@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"  xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<mvc:annotation-driven />
+	<aop:aspectj-autoproxy />
+	<context:component-scan base-package="org.forten.sample" />
+	<context:property-placeholder location="classpath*:/system/*.properties" />
+	
+	<bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource" p:driverClassName="${jdbc.driverClassName}"
+		p:url="${jdbc.url}" p:username="${jdbc.username}" p:password="${jdbc.password}"
+		p:initialSize="${jdbc.initialSize}" p:maxActive="${jdbc.maxActive}"
+		p:maxWait="${jdbc.maxWait}" p:maxIdle="${jdbc.maxIdle}" p:minIdle="${jdbc.minIdle}" />
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource" p:packagesToScan-ref="packagesToScanList"
+		p:hibernateProperties-ref="hibernateProperties" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory" />
+
+	<tx:annotation-driven />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="" p:suffix="" />
+
+	<util:list id="packagesToScanList">
+		<value>org.forten.**.entity</value>
+	</util:list>
+
+	<util:properties id="hibernateProperties">
+		<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+		<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
+		<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop>
+		<prop key="hibernate.cache.region.factory_class">${hibernate.cache.region.factory_class}</prop>
+		<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+		<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+		<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+		<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+	</util:properties>
+	
+	<!-- 
+		一个cron表达式至少会有5到6个空格分隔的时间元素，从左到右这个元素分别代表：
+		1：秒（0-59）
+		2：分钟（0-59）
+		3：小时（0-23）
+		4：月份中的日期（1-31）
+		5：月份（1-12或JAN-DEC）
+		6：星期中的日期（1-7或SUN-SAT）
+		7：年（1970-2099）（可省略）
+		
+		符号：
+		-：区间（从n到m：n-m）
+		*：通配符（任意）
+		?：可忽略的时间单位
+		,：或，同时可取得多个用逗号分隔的值
+		/：时间间隔（m/n：m这个时间单位的取值开始，每隔n这个时间单位，执行一次
+	
+		例子：
+		0 0 10,14,16 * * ?：每天上午10点，下午14点和16点执行
+		0 0,15,30,45 * 1-10 * ?：每月前10天每小时中的0,15,30,45分钟时执行
+		30 0 0 1 1 ? 2015：2015年1月1日00:00:30进行执行
+		0 0 12 * * ?：每天中午12点执行
+		0 15 10 * * ?：每天上午10:15:00
+		0 15 10 ? * *：每天上午10:15:00
+		0 15 10 * * ? *：每天上午10:15:00
+		0 0/5 14 * * ?：每天下午14点到14点55分，每5分钟执行一次
+		0 15 10 ? * MON-FRI：每周工作日的上午10:15执行
+	 -->
+	<!-- <task:scheduled-tasks>
+		<task:scheduled ref="sendEmail" method="sendEmail" cron="0 30 14 30 5 ? 2016" />
+	</task:scheduled-tasks> --> 
+	
+	<task:annotation-driven/>
+</beans>

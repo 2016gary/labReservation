@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>教师实验室管理</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script type="text/javascript" src="/js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<style type="text/css">
+body{
+	margin-top: 1em;
+}
+h2{
+	text-align: center;
+}
+footer{
+	text-align: center;
+	background-color: #FE4365;
+	color: #fff;
+	height: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+.trademark{
+	display: inline-block;
+	margin-top: 5px;
+}
+</style>
+</head>
+<body>
+	<!-- 头部导航条 -->
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a id="teacherName" class="navbar-brand" href="">教师管理页面</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/teacher/laboratoryName/listForSelect.do">实验室信息管理</a></li>
+                <li class="active"><a href="/teacher/laboratoryName.html">实验室添加/删除</a></li>
+                <li><a href="/teacher/echarts.jsp">使用情况</a></li>
+                <li><a href="/teacher/notebook.html">留言板管理</a></li>
+                <li><a href="/teacher/personalUpdate.html">个人设置</a></li>
+        		<li><a href="/logout.do">退出登录</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+	
+	<!-- 页面主题部分 -->
+	<div class="container">
+		<div class="row">
+			<!-- 操作工具条 -->
+			<div class="btn-group col-lg-4">
+				<button id="save-btn" class="btn btn-primary">
+					<span class="glyphicon glyphicon-plus" title="添加"></span>
+				</button>
+				<button id="update-btn" class="btn btn-warning" disabled="disabled">
+					<span class="glyphicon glyphicon-edit" title="修改"></span>
+				</button>
+				<button id="delete-btn" class="btn btn-danger" disabled="disabled">
+					<span class="glyphicon glyphicon-trash" title="删除"></span>
+				</button>
+				<a class="btn btn-success" href="/teacher/laboratoryName/export.do">
+					<span class="glyphicon glyphicon-save-file" title="导出Excel文件"></span>
+				</a>
+			</div>
+		</div>
+		
+		<!-- 查询数据结果table -->
+		<div class="col-lg-8 col-lg-offset-2">
+		<table id="data-table" class="table table-hover table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>实验室名称</th>
+					<th><input type="checkbox" id="select-all"/></th>
+				</tr>
+			</thead>
+			<tbody id="main-data">
+				<tr>
+					<td colspan="3" class="text-center"><img src="/images/loading.gif" /></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+		
+	<!-- 添加实验室名称对话框 -->
+	<div id="save-dialog" title="添加实验室名称" class="container">
+		<form id="save-form" class="form-horizontal">
+			<div class="form-group">
+				<label class="col-lg-3 control-label">实验室名称：</label>
+				<div class="col-lg-9">
+					<input id="save-laboratoryName" class="form-control"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<!-- 修改实验室名称对话框 -->
+	<div id="update-dialog" title="修改实验室名称" class="container">
+		<form id="update-form" class="form-horizontal">
+			<input id="update-id" type="hidden" />
+			<div class="form-group">
+				<label class="col-lg-3 control-label">实验室名称：</label>
+				<div class="col-lg-9">	
+					<input id="update-laboratoryName" class="form-control"/>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- 确认删除对话框 -->
+	<div id="delete-dialog" title="删除实验室名称">
+		<p>是否确定删除？</p>
+	</div>
+	
+	
+	<!-- 页脚 -->
+	<footer class="navbar-fixed-bottom">
+        <p class="trademark">&copy;NUC test system by Gary 2016</p>
+    </footer>
+	<script type="text/javascript">
+		$(function(){
+			list();
+			
+			$('#save-btn').on('click',function(){
+				saveDialog.dialog('open');
+			});
+			
+			$('#select-all').on('change',function(){
+				$('.checkbox-id').prop('checked',$(this).prop('checked'));
+				$('#delete-btn').prop('disabled',!$(this).prop('checked'));
+				var countChecked=$('.checkbox-id:checked').length;
+				if(countChecked==1){
+					$('#update-btn').prop('disabled',false);
+				}else{
+					$('#update-btn').prop('disabled',true);
+				}
+			});
+			
+			$('#main-data').on('change','.checkbox-id',changeSmallBtnStatus);
+			
+			$('#delete-btn').on('click',function(){
+				deleteDialog.dialog('open');
+			});
+			
+			$('#update-btn').on('click',function(){
+				var id = $('.checkbox-id:checked').first().val();
+				$('#update-id').val(id);
+				var dataTds = $('input[value="'+id+'"]').parent().parent().children('td');
+				$('#update-laboratoryName').val($(dataTds[1]).text());
+				updateDialog.dialog('open');
+			});
+		});
+		
+		var changeSmallBtnStatus=function(){
+			var countChecked=$('.checkbox-id:checked').length;
+			if(countChecked==1){
+				$('#update-btn,#delete-btn').prop('disabled',false);
+			}else if(countChecked>1){
+				$('#update-btn').prop('disabled',true);
+			}else{
+				$('#update-btn,#delete-btn').prop('disabled',true);
+			}
+		}
+		
+		var list=function(){
+			$.ajax({
+				url:'/teacher/laboratoryName/list.do',
+				type:'GET',
+				dataType:'json',
+			}).then(function(ro){
+					$('#teacherName').html("<span>"+ro.loginedAdmin.adminName+"</span>老师，欢迎您！");
+					$('#main-data').empty();
+					if(jQuery.isEmptyObject(ro.nameVoList)){
+						$('#main-data').html("<tr><td colspan='3'><h2>暂未添加实验室</h2></td></tr>");
+					}else{
+						$.each(ro.nameVoList,function(index,vo){
+							var voForTable='<tr><td>'+(index+1)+'</td><td>'+vo.laboratoryName+'</td><td><input type="checkbox" name="laboratoryNameId" class="checkbox-id" value="'+vo.id+'"/></td></tr>'
+							$('#main-data').append(voForTable);
+						});
+					}
+			},function(){
+			});
+		};
+		
+		var save=function(){
+			var laboratory={};
+			laboratory['laboratoryName']=$('#save-laboratoryName').prop('value');
+			var laboratoryJsonStr=JSON.stringify(laboratory);
+			$.ajax({
+				url:'/teacher/laboratoryName/save.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+				data:laboratoryJsonStr
+			}).then(function(messageVo){
+				alert(messageVo.message);
+				$('#save-form')[0].reset();
+				list();
+			},function(){
+				alert("添加失败！");
+			}).always(function(){
+				saveDialog.dialog('close');
+			});
+		};
+		
+		var saveDialog=$('#save-dialog').dialog({
+			autoOpen:false,
+			width:450,
+			height:200,
+			modal:true,
+			buttons:{
+				'添加':save,
+				'取消':function(){
+					$('#save-form')[0].reset();
+					saveDialog.dialog('close');
+				}
+			}
+		});
+		
+		var del=function(){
+			var countChecked = $('.checkbox-id:checked').length;
+			var ids = "[";
+			$('.checkbox-id:checked').each(function(index,elementChecked){
+				ids = ids+Number($(elementChecked).prop('value'));
+				if(index<(countChecked-1)){
+					ids = ids+",";
+				}
+			});
+			ids=ids+"]";
+			$.ajax({
+				url:'/teacher/laboratoryName/delete.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+				data:ids
+			}).done(function(messageVo){
+				alert(messageVo.message);
+				list();
+			}).fail(function(){
+				alert("删除失败！");
+			}).always(function(){
+				deleteDialog.dialog('close');
+			});
+		};
+		
+		var deleteDialog = $('#delete-dialog').dialog({
+			autoOpen:false,
+			width:450,
+			height:220,
+			modal:true,
+			buttons:{
+				"确定":del,
+				"取消":function(){
+					deleteDialog.dialog('close');
+				}
+			}
+		});
+		
+		var update = function(){
+			var laboratory={};       
+			laboratory['id']=$('#update-id').prop('value'); 
+			laboratory['laboratoryName']=$('#update-laboratoryName').prop('value');       
+			var laboratoryJsonStr=JSON.stringify(laboratory);                           
+			$.ajax({
+				url:'/teacher/laboratoryName/update.do',
+				type:"POST",
+				dataType:"json",
+				contentType:"application/json",
+				data:laboratoryJsonStr
+			}).then(function(vo){
+				alert(vo.message);
+				$('#update-form')[0].reset();
+				list();
+			},function(){
+				alert("修改失败！");
+			}).always(function(){
+				updateDialog.dialog('close');
+			});
+		};
+		
+		var updateDialog = $('#update-dialog').dialog({
+			autoOpen:false,
+			width:450,
+			height:200,
+			modal:true,
+			buttons:{
+				"修改":update,
+				"取消":function(){
+					updateDialog.dialog('close');
+				}
+			}
+		});
+	</script>
+</body>
+</html>

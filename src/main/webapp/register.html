@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>学生注册</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<style type="text/css">
+	          .error-msg{
+              	  font-size: 1em;
+              	  font-weight: bold;
+              	  color: #f66;
+              }
+              body{
+                  background-image: url("/assets/img/backgrounds/registe.jpg");
+                  overflow: false;
+              }
+              .container{
+                  padding-top: 12%;
+              }
+              span{
+                  color: #f66;
+              }
+              label{
+                  color: black;
+              }
+              #ps{
+                  color: white;
+              }
+    </style>
+    <script type="text/javascript">
+              function isEmptyValue(event){
+            	  var element = event.currentTarget;
+	          	  var v = element.value.trim();
+	          	  element.nextSibling.setAttribute("data-flag","true");
+	          	  var msg = "请输入数据";
+	    		  if(element.hasAttribute("data-msg")){
+	    		  	  msg = element.getAttribute("data-msg");
+	    		  }
+	          	  if(v.length==0){
+	          	  	  element.nextSibling.innerText = msg;
+	          	  }else if(element==document.getElementById("email")){
+		          		  if(element.value.indexOf("@")==-1){
+		          			   element.nextSibling.innerText = "邮箱地址不正确";
+				    	  }else{
+			          	  	  element.nextSibling.innerText = "";
+			          	  }
+	          	  }else if(element==document.getElementById("number")){
+	          		      var user=document.getElementById("number").value.trim();
+			    	      if(user.length==10){
+			    	          element.nextSibling.innerText = "";
+			    	      }else{
+			          	  	  element.nextSibling.innerText = "请输入正确的学号";
+			          	  }
+				  }else if(element==document.getElementById("password")){
+					      var pwd=document.getElementById("password").value.trim();
+		    	          if(pwd.length<4||pwd.length>20){
+		    	              element.nextSibling.innerText = "密码长度在4-20个字节之间";
+		    	          }else{
+			          	  	  element.nextSibling.innerText = "";
+			          	  }  
+				  }else if(element==document.getElementById("password2")){
+				      var pwd2=document.getElementById("password2").value.trim();
+				      var pwd=document.getElementById("password").value.trim();
+	    	          if(pwd==pwd2){
+	    	        	  element.nextSibling.innerText = "";
+	    	          }else{
+	    	        	  element.nextSibling.innerText = "确认密码要跟密码一致";
+		          	  }  
+			      }else{
+		          	   element.nextSibling.innerText = "";
+	          	  }
+	          }
+              function registForm(){
+          		  var flag = document.querySelectorAll("[data-flag='true']");
+          		  var err = document.querySelectorAll(".error-msg");
+          		  if(flag.length<err.length){
+          		  	alert("请将表格填写完整！");
+          		  	return false;
+          		  }
+          		  for(var i = 0;i < err.length;i++){
+          		  	if(err[i].innerText.length>0){
+          		  		alert("请将表格填写完整！");
+          		  		return false;
+          		  	}
+          		  }
+          		  /* writeData(); */
+          		  /* genderValue(); */
+		    	  alert("注册成功！");
+          		  return true;
+          	  }
+              /* function writeData(){
+          	  	  var valueArr = document.querySelectorAll("input");
+          	  	  for(var i = 0; i < valueArr.length; i++){
+          	  	  	localStorage.setItem(valueArr[i].name,valueArr[i].value);
+          	  	  }
+          	  	  var select = document.querySelector("select");
+		  	      localStorage.setItem(select.name,select.value);
+          	  } */
+              /* function genderValue(){
+  			    var genderArr=document.getElementsByName("gender");
+  			    var sex;
+  			    for(var i=0;i<genderArr.length;i++){
+  			  	  if(genderArr[i].checked==true){
+  			  		  localStorage.setItem("sex",genderArr[i].value);
+  			  		  break;
+  			  	  }
+  			    }
+  			  } */
+              function resetForm(){
+        	  	  var flag = document.querySelectorAll("[data-flag='true']");
+        	  	  for(var i = 0;i < flag.length;i++){
+        	  	  	flag[i].removeAttribute("data-flag");
+        	  	  }
+        	  }
+	</script>
+	</head>
+	<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+     <label class="navbar-brand" style="font-size: 1.5em;height: 30px;">学生注册：</label>
+    </nav>
+	 <div class="container col-lg-9 col-lg-offset-3">
+	    <form id="form" action="/register.do" method="post" class="form-horizontal">
+	         <div class="form-group" style="margin-bottom: 0em;">
+	              <label class="col-lg-4 control-label"><span>*</span>学号：</label>
+	              <div class="col-lg-4">
+	                  <input id="number" name="number" data-msg="请输入学号" class="form-control" placeholder="学号" style=""/><label class="error-msg"></label>
+	              </div>
+	         </div>
+	         <div class="form-group" style="margin-bottom: 0em;">
+	              <label class="col-lg-4 control-label"><span>*</span>密&nbsp;码：</label>
+	              <div class="col-lg-4">
+	                  <input id="password" name="password" type="password" data-msg="请输入密码" class="form-control" placeholder="密码"/><label class="error-msg"></label>
+	              </div>
+	         </div>
+	         <div class="form-group" style="margin-bottom: 0em;">
+	              <label class="col-lg-4 control-label"><span>*</span>确认密码：</label>
+	              <div class="col-lg-4">
+	                  <input id="password2" type="password" data-msg="请输入确认密码" class="form-control" placeholder="再次输入" /><label class="error-msg"></label>
+	              </div>
+	         </div>
+	         <div class="form-group" style="margin-bottom: 0em;">
+	              <label class="col-lg-4 control-label"><span>*</span>姓&nbsp;名：</label>
+	              <div class="col-lg-4">
+	                  <input id="name" name="name" data-msg="请输入真实姓名" class="form-control" placeholder="真实姓名"/><label class="error-msg"></label>
+	              </div>
+	         </div>
+	         <div class="form-group" style="margin-bottom: 0em;">
+	              <label class="col-lg-4 control-label"><span>*</span>电子邮件：</label>
+	              <div class="col-lg-4">
+	                  <input id="email" name="email" data-msg="请输入邮箱" class="form-control" placeholder="邮箱"/><label class="error-msg"></label>
+	              </div>
+	         </div>
+	         <div class="form-group" style="margin-bottom: 1em;">
+	              <label class="col-lg-4 control-label">性&nbsp;别：</label>
+	              <div class="col-lg-4">
+	                  <label class="radio-inline">
+	                       <input type="radio" name="gender" value="男" />男
+	                  </label>
+	                  <label class="radio-inline">
+	                       <input type="radio" name="gender" value="女" />女
+	                  </label>
+	                  <label class="radio-inline">
+	                       <input type="radio" name="gender" value="保密" checked/>保密
+	                  </label>
+	              </div>
+	         </div>
+	         <div class="form-group">
+	             <div class="col-lg-offset-4 col-lg-4">
+	                   <button class="btn btn-primary">注册</button>
+	                   <button class="btn btn-warning" type="reset">重置</button>
+	             </div>
+	         </div>
+	    </form>
+	  </div>
+	  <script type="text/javascript">
+      var tags = document.querySelectorAll("input");
+      for(var i = 0; i < tags.length; i++){
+      	tags[i].oninput = isEmptyValue;
+      	tags[i].onblur = isEmptyValue;
+      }
+      document.forms['form'].onsubmit = registForm;
+      document.forms['form'].onreset = resetForm;
+	  </script>
+	  <script type="text/javascript" src="/js/jquery-2.2.0.js"></script>
+	  <script type="text/javascript" src="/js/bootstrap.js"></script>
+	</body>
+</html>

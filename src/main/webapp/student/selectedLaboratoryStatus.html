@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>学生已预约状态</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script type="text/javascript" src="/js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<style type="text/css">
+body{
+	margin-top: 1em;
+}
+h2{
+	text-align: center;
+}
+footer{
+	text-align: center;
+	background-color: #e7e7e7;
+	color: black;
+	height: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+.trademark{
+	display: inline-block;
+	margin-top: 5px;
+}
+</style>
+</head>
+<body>
+	<!-- 头部导航条 -->
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a id="studentName" class="navbar-brand" href="">学生预约页面</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/student/laboratoryName/listForSelect.do">实验室预约</a></li>
+                <li class="active"><a href="/student/selectedLaboratoryStatus.html">已预约状态</a></li>
+                <li><a href="/student/personalUpdate.html">个人设置</a></li>
+        		<li><a href="/logout.do">退出登录</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+	
+	<!-- 页面主题部分 -->
+	<div class="container">
+		<!-- 查询数据结果table -->
+		<table id="data-table" class="table table-hover table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>实验室</th>
+					<th>实验室地点</th>
+					<th>预约提交时间</th>
+					<th>人数下限</th>
+					<th>人数上限</th>
+					<th>开放时间</th>
+					<th>预约状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody id="main-data">
+				<tr>
+					<td colspan="9" class="text-center"><img src="/images/loading.gif" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		
+	<!-- 页脚 -->
+	<footer class="navbar-fixed-bottom">
+        <p class="trademark">&copy;NUC test system by Gary 2016</p>
+    </footer>
+	<script type="text/javascript">
+		var totalPage=0;
+		
+		$(function(){
+			showName();
+			
+			list();
+			
+			$('#main-data').on('click','button[name="id"]',doDelete);
+		});
+		
+		var doDelete=function(){
+			var studentLaboratoryRelation={};
+			studentLaboratoryRelation['id']=$(this).attr('data-id');
+			var studentLaboratoryRelationJsonStr=JSON.stringify(studentLaboratoryRelation);
+			$.ajax({
+				url:'/student/delete.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+				data:studentLaboratoryRelationJsonStr
+			}).then(function(messageVo){
+				alert(messageVo.message);
+				list();
+			},function(){
+				alert("退选失败");
+			});
+		};
+
+		var showName=function(){
+			$.ajax({
+				url:'/showName.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+			}).then(function(loginedAdminVo){
+				$('#studentName').html("<span>"+loginedAdminVo.adminName+"</span>同学，欢迎预约！");
+			},function(){
+			});
+		};
+		
+		var list=function(){
+			$.ajax({
+				url:'/student/list.do',
+				type:'GET',
+				dataType:'json',
+				contentType:'application/json'
+			}).then(function(studentLaboratoryRelationVoList){
+				$('#main-data').empty();
+				if(jQuery.isEmptyObject(studentLaboratoryRelationVoList)){
+					$('#main-data').html("<tr><td colspan='9'><h2>暂未进行预约</h2></td></tr>");
+				}else{
+					$.each(studentLaboratoryRelationVoList,function(index,studentLaboratoryRelationVo){
+						var voForTable='<tr><td>'+(index+1)+'</td><td>'+studentLaboratoryRelationVo.laboratoryName+'</td><td>'+studentLaboratoryRelationVo.laboratoryAddress+'</td><td>'+studentLaboratoryRelationVo.orderedTime+'</td><td>'+studentLaboratoryRelationVo.minNumber+'</td><td>'+studentLaboratoryRelationVo.maxNumber+'</td><td>'+studentLaboratoryRelationVo.classTime+'</td><td>'+studentLaboratoryRelationVo.laboratoryOrderStatusDesc+'</td>'+'<td><button name="id" class="btn btn-default" data-id="'+studentLaboratoryRelationVo.id+'">退选</button></td></tr>';
+						$('#main-data').append(voForTable);
+					});
+				}
+			},function(){
+			});
+		};
+	</script>
+</body>
+</html>

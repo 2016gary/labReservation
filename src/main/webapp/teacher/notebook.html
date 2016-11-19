@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>教师留言板管理</title>
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<style type="text/css">
+#load-div{
+	margin-top: 80px;
+}
+.notebookBtn{
+	margin-top: 80px;
+}
+.navbar-wrapper{
+	margin-top: 14px;
+}
+footer{
+	text-align: center;
+	background-color: #FE4365;
+	color: #fff;
+	height: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+.trademark{
+	display: inline-block;
+	margin-top: 5px;
+}
+.btnForResponse{
+	margin-top: 20px;
+}
+</style>
+<script type="text/javascript" src="/js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript">
+	$(function(){
+		showName();
+		list();
+		$('#notebook-div').on('click','.update-btn',showUpdateVo);
+		$('#notebook-div').on('click','.reply-btn',response);
+		$('#notebook-div').on('click','.delete-btn',function(){
+			// 把删除<a>元素中的自定义属性data-id的值取到，并分配给id是del-id的span元素的data-id属性
+			$('#del-id').data("id",$(this).data("id"));
+			deleteDialog.dialog('open');
+		});
+		$('#update-btn').on('click',update);
+		$('.cancleRe').on('click',function(){
+			responseDialog.dialog('close');
+		});
+		$('.responseRe').on('click',function(){
+			var notebookResponse={
+				'notebookId':$('#notebookIdForRe').val(),
+				'contentText':$('#contentTextForResponse').val()
+			};
+			$.ajax({
+				url:"/notebook/response.do",
+				type:"POST",
+				dataType:'json',
+				contentType:"application/json",
+				data:JSON.stringify(notebookResponse)
+			}).then(function(vo){
+				responseDialog.dialog('close');
+				alert("回复成功");
+				list();
+			},function(){
+				alert("回复失败");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 头部导航条 -->
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a id="teacherName" class="navbar-brand" href="">教师管理页面</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/teacher/laboratoryName/listForSelect.do">实验室信息管理</a></li>
+                <li><a href="/teacher/laboratoryName.html">实验室添加/删除</a></li>
+                <li><a href="/teacher/echarts.jsp">使用情况</a></li>
+                <li class="active"><a href="/teacher/notebook.html">留言板管理</a></li>
+                <li><a href="/teacher/personalUpdate.html">个人设置</a></li>
+                <li><a href="/logout.do">退出登录</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="container">
+    	<div id="notebook-div">
+    		<div id="load-div" class="text-center">
+    			<img src="/images/loading.gif" />
+    		</div>
+    	</div>
+	</div>
+	
+	<span id="del-id" data-id=""></span>
+	<div id="update-dialog" title="修改留言">
+		<form id="update-form" class="form-horizontal">
+			<input name="id" id="id" type="hidden" />
+			<div class="form-group">
+				<label class="col-sm-2 control-label">标题</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title" name="title"
+						placeholder="留言标题">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">留言人</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="username"
+						name="username" placeholder="留言人">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">留言内容</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" id="contentText" name="contentText"
+						rows="5" cols="50"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button id="update-btn" type="button" class="btn btn-default">修改</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="delete-dialog" title="警告">
+		<p>是否要删除留言？</p>
+	</div>
+	
+	<div id="msg-dialog" title="信息">
+		<p></p>
+	</div>
+	
+	<div id="response-dialog" title="回复">
+		<textarea id="contentTextForResponse" rows="5" cols="50"></textarea>
+		<input id="notebookIdForRe" type="hidden"/>
+		<div class="pull-right btnForResponse">
+			<button class="btn btn-default responseRe">回复</button>
+			<button class="btn btn-default cancleRe">取消</button>
+		</div>
+	</div>
+	
+	<!-- 页脚 -->
+	<footer class="navbar-fixed-bottom">
+        <p class="trademark">&copy;NUC test system by Gary 2016</p>
+    </footer>
+	<script type="text/javascript">
+		// 定义消息对话框对象
+		var msgDialog = $('#msg-dialog').dialog({
+			autoOpen:false,
+			width:300,
+			height:150
+		});
+
+		// 更新数据表单的对话框对象
+		var updateDialog = $('#update-dialog').dialog({
+			autoOpen:false,
+			width:480,
+			height:370
+		});
+		
+		// 更新数据表单的对话框对象
+		var responseDialog = $('#response-dialog').dialog({
+			autoOpen:false,
+			width:511,
+			height:240
+		});
+
+		// 更新数据功能的函数
+		var update = function(){
+			// 准备一个要被提交的JSON对象
+			var jsonData = {};
+			// 遍历表单中的控件，把用户输入的数据封装成一个jsonData对象
+			$.each($('#update-form').serializeArray(),function(index,obj){
+				jsonData[obj.name]=obj.value;
+			});
+			// 把以上封装好的对象变为JSON字符串形式
+			var jsonStr = JSON.stringify(jsonData);
+
+			// 发送更新请求
+			$.ajax({
+				url:"/notebook/update.do",
+				type:"POST",
+				contentType:"application/json",
+				dataType:"json",
+				data:jsonStr
+			}).then(function(msgVo){
+				$('#msg-dialog>p').text(msgVo.msg);
+				msgDialog.dialog('open');
+				list();
+			},function(){
+				alert("error");
+			}).always(function(){
+				updateDialog.dialog('close');
+			});
+		}
+		
+		var response = function(){
+			var id=$(this).attr('data-id');
+			$('#notebookIdForRe').attr('value',id);
+			responseDialog.dialog('open');
+		}
+		
+		// 用于更新数据表单中的数据回显
+		var showUpdateVo = function(){
+			// 从被点击的<a>元素上取得名为data-id的用户自定义属性值
+			var id = $(this).data('id');
+			// 发送请求
+			$.ajax({
+				url:"/notebook/gotoUpdate.do?id="+id,
+				type:"GET",
+				dataType:'json'
+			}).then(function(vo){
+				// 把取来的数据分别回显到表单中相应的控件上
+				$('#title','#update-form').attr('value',vo.title);
+				$('#id','#update-form').attr('value',vo.id);
+				$('#username','#update-form').attr('value',vo.username);
+				$('#contentText','#update-form').text(vo.contentText);
+				updateDialog.dialog('open');
+			},function(){
+				alert('error');
+			});
+		}
+
+		// 删除功能函数
+		var del = function(){
+			// 从id是del-id的span元素的用户自定义属性data-id中得到留言的id值
+			var id = $("#del-id").data("id");
+			// 如果id不是空串会发送删除请求
+			if(id!="") {
+				$.ajax({
+					url: "/notebook/delete.do?id=" + id,
+					type: "GET",
+					dataType: "json"
+				}).then(function (vo) {
+					$('#msg-dialog>p').text(vo.msg);
+					msgDialog.dialog('open');
+					list();
+				}, function () {
+					$('#msg-dialog>p').text("删除失败");
+					msgDialog.dialog('open');
+				}).always(function(){
+					$("#del-id").data("id","");
+					deleteDialog.dialog('close');
+				});
+			}
+		}
+
+		// 用于数据加载的功能函数
+		var list = function(){
+			$.ajax({
+				url:"/notebook/list.do",
+				type:"GET",
+				dataType:"json"
+			}).then(
+				function(map){
+					$('#notebook-div').empty();
+					$.each(map, function(key, value) { 
+						if(key==0){
+							$.each(value,function(index,nb){
+								var nbHtml = "<div id='"+nb.id+"' class='row'><div class='col-lg-8'><h2>"+nb.title+"</h2><p>"+nb.createTimeStr+" by <strong>"+nb.username+"</strong></p><p>"+nb.contentText+"</p></div><div class='col-lg-offset-2 btn-group notebookBtn'><button data-id='"+nb.id+"' class='btn btn-success update-btn'>修改</button><button data-id='"+nb.id+"' class='btn btn-danger delete-btn'>删除</button><button data-id='"+nb.id+"' class='btn btn-info reply-btn'>回复</button></div><hr></div>";
+								$('#notebook-div').append(nbHtml);
+							});
+						}
+						if(key==1){
+							$.each(value,function(index,vo){
+								var responseHtml="<div class='row'><div class='col-lg-5 pull-right'><label>留言回复：</label><p style='word-break:break-word;'>"+vo.contentText+"</p></div></div><hr>";
+								$("#"+vo.notebookId).append(responseHtml); 
+							});
+						}
+					}); 
+				},function(){
+					alert('error');
+				}
+			);
+		}
+
+		// 准备删除确认对话框对象
+		var deleteDialog = $('#delete-dialog').dialog({
+			autoOpen:false,
+			buttons:{
+				"确定":del,
+				"取消":function(){
+					deleteDialog.dialog('close');
+				}
+			}
+		});
+		
+		var showName=function(){
+			$.ajax({
+				url:'/showName.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+			}).then(function(loginedAdminVo){
+				$('#teacherName').html("<span>"+loginedAdminVo.adminName+"</span>老师，欢迎您！");
+			},function(){
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,3757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<style type="text/css">
+.marketing{
+	margin-top: 20px;
+}
+.imgsCircle{
+	margin-left: 45px;
+}
+h2,.img-circle{
+	margin-left: 35px;
+}
+footer{
+	text-align: center;
+	background-color: #FE4365;
+	color: #fff;
+	height: 30px;
+}
+.trademark{
+	display: inline-block;
+	margin-top: 5px;
+}
+.shake {
+    display: inline-block;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center
+}
+.shake:hover {
+    -webkit-animation-name: shake-base;
+    -ms-animation-name: shake-base;
+    animation-name: shake-base;
+    -webkit-animation-duration: 100ms;
+    -ms-animation-duration: 100ms;
+    animation-duration: 100ms;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-play-state: running;
+    -ms-animation-play-state: running;
+    animation-play-state: running
+}
+.shake.shake-slow:hover {
+    -webkit-animation-name: shake-slow;
+    -ms-animation-name: shake-slow;
+    animation-name: shake-slow;
+    -webkit-animation-duration: 5s;
+    -ms-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-play-state: running;
+    -ms-animation-play-state: running;
+    animation-play-state: running
+}
+@-webkit-keyframes shake-base {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(1.5px, -2.5px) rotate(-1.5deg)
+    }
+    4% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(-0.5deg)
+    }
+    6% {
+        -webkit-transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    8% {
+        -webkit-transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    10% {
+        -webkit-transform: translate(1.5px, 0.5px) rotate(0.5deg)
+    }
+    12% {
+        -webkit-transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    14% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    16% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-1.5deg)
+    }
+    18% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-0.5deg)
+    }
+    20% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(0.5deg)
+    }
+    22% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    24% {
+        -webkit-transform: translate(-2.5px, 1.5px) rotate(-1.5deg)
+    }
+    26% {
+        -webkit-transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(-0.5px, -2.5px) rotate(-1.5deg)
+    }
+    30% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-1.5deg)
+    }
+    32% {
+        -webkit-transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    34% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(0.5deg)
+    }
+    36% {
+        -webkit-transform: translate(-1.5px, -1.5px) rotate(-0.5deg)
+    }
+    38% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(-1.5deg)
+    }
+    40% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    42% {
+        -webkit-transform: translate(-0.5px, 1.5px) rotate(-1.5deg)
+    }
+    44% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(0.5deg)
+    }
+    46% {
+        -webkit-transform: translate(-2.5px, -1.5px) rotate(0.5deg)
+    }
+    48% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(0.5deg)
+    }
+    50% {
+        -webkit-transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    52% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(0.5deg)
+    }
+    54% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(-1.5deg)
+    }
+    56% {
+        -webkit-transform: translate(-1.5px, -1.5px) rotate(-1.5deg)
+    }
+    58% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    60% {
+        -webkit-transform: translate(-0.5px, -0.5px) rotate(0.5deg)
+    }
+    62% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    64% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(0.5deg)
+    }
+    66% {
+        -webkit-transform: translate(-0.5px, -2.5px) rotate(0.5deg)
+    }
+    68% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(-1.5deg)
+    }
+    70% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-1.5deg)
+    }
+    72% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    74% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-0.5deg)
+    }
+    76% {
+        -webkit-transform: translate(-1.5px, -2.5px) rotate(0.5deg)
+    }
+    78% {
+        -webkit-transform: translate(-1.5px, -2.5px) rotate(-0.5deg)
+    }
+    80% {
+        -webkit-transform: translate(-0.5px, 1.5px) rotate(-0.5deg)
+    }
+    82% {
+        -webkit-transform: translate(1.5px, -1.5px) rotate(-0.5deg)
+    }
+    84% {
+        -webkit-transform: translate(-0.5px, -1.5px) rotate(-1.5deg)
+    }
+    86% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(-0.5deg)
+    }
+    88% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    90% {
+        -webkit-transform: translate(-0.5px, 0.5px) rotate(-1.5deg)
+    }
+    92% {
+        -webkit-transform: translate(1.5px, -2.5px) rotate(0.5deg)
+    }
+    94% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-1.5deg)
+    }
+    96% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(-1.5deg)
+    }
+    98% {
+        -webkit-transform: translate(-0.5px, 0.5px) rotate(-0.5deg)
+    }
+}
+@-ms-keyframes shake-base {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(-2.5px, 1.5px) rotate(-1.5deg)
+    }
+    4% {
+        -ms-transform: translate(0.5px, -0.5px) rotate(-0.5deg)
+    }
+    6% {
+        -ms-transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    8% {
+        -ms-transform: translate(1.5px, -2.5px) rotate(0.5deg)
+    }
+    10% {
+        -ms-transform: translate(1.5px, 1.5px) rotate(-1.5deg)
+    }
+    12% {
+        -ms-transform: translate(1.5px, -2.5px) rotate(-1.5deg)
+    }
+    14% {
+        -ms-transform: translate(-1.5px, -1.5px) rotate(-1.5deg)
+    }
+    16% {
+        -ms-transform: translate(-1.5px, -0.5px) rotate(-1.5deg)
+    }
+    18% {
+        -ms-transform: translate(-1.5px, -1.5px) rotate(0.5deg)
+    }
+    20% {
+        -ms-transform: translate(-1.5px, 0.5px) rotate(-1.5deg)
+    }
+    22% {
+        -ms-transform: translate(1.5px, 1.5px) rotate(-1.5deg)
+    }
+    24% {
+        -ms-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    26% {
+        -ms-transform: translate(1.5px, -2.5px) rotate(0.5deg)
+    }
+    28% {
+        -ms-transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    30% {
+        -ms-transform: translate(-1.5px, 1.5px) rotate(0.5deg)
+    }
+    32% {
+        -ms-transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    34% {
+        -ms-transform: translate(0.5px, -2.5px) rotate(0.5deg)
+    }
+    36% {
+        -ms-transform: translate(-1.5px, 1.5px) rotate(0.5deg)
+    }
+    38% {
+        -ms-transform: translate(-1.5px, -0.5px) rotate(0.5deg)
+    }
+    40% {
+        -ms-transform: translate(1.5px, -1.5px) rotate(0.5deg)
+    }
+    42% {
+        -ms-transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    44% {
+        -ms-transform: translate(-0.5px, -1.5px) rotate(0.5deg)
+    }
+    46% {
+        -ms-transform: translate(-0.5px, -0.5px) rotate(-1.5deg)
+    }
+    48% {
+        -ms-transform: translate(-1.5px, 1.5px) rotate(-1.5deg)
+    }
+    50% {
+        -ms-transform: translate(-0.5px, -2.5px) rotate(-1.5deg)
+    }
+    52% {
+        -ms-transform: translate(0.5px, 0.5px) rotate(-1.5deg)
+    }
+    54% {
+        -ms-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    56% {
+        -ms-transform: translate(0.5px, -0.5px) rotate(-0.5deg)
+    }
+    58% {
+        -ms-transform: translate(-2.5px, -0.5px) rotate(0.5deg)
+    }
+    60% {
+        -ms-transform: translate(1.5px, 0.5px) rotate(-0.5deg)
+    }
+    62% {
+        -ms-transform: translate(-2.5px, 1.5px) rotate(-1.5deg)
+    }
+    64% {
+        -ms-transform: translate(0.5px, -1.5px) rotate(-0.5deg)
+    }
+    66% {
+        -ms-transform: translate(-1.5px, -2.5px) rotate(-0.5deg)
+    }
+    68% {
+        -ms-transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    70% {
+        -ms-transform: translate(-0.5px, 1.5px) rotate(-1.5deg)
+    }
+    72% {
+        -ms-transform: translate(1.5px, -1.5px) rotate(-0.5deg)
+    }
+    74% {
+        -ms-transform: translate(-0.5px, 1.5px) rotate(-1.5deg)
+    }
+    76% {
+        -ms-transform: translate(1.5px, -2.5px) rotate(-1.5deg)
+    }
+    78% {
+        -ms-transform: translate(-0.5px, 0.5px) rotate(0.5deg)
+    }
+    80% {
+        -ms-transform: translate(0.5px, -0.5px) rotate(-1.5deg)
+    }
+    82% {
+        -ms-transform: translate(1.5px, 0.5px) rotate(0.5deg)
+    }
+    84% {
+        -ms-transform: translate(-2.5px, 0.5px) rotate(-1.5deg)
+    }
+    86% {
+        -ms-transform: translate(-1.5px, -0.5px) rotate(-1.5deg)
+    }
+    88% {
+        -ms-transform: translate(-2.5px, -1.5px) rotate(0.5deg)
+    }
+    90% {
+        -ms-transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    92% {
+        -ms-transform: translate(0.5px, -0.5px) rotate(-1.5deg)
+    }
+    94% {
+        -ms-transform: translate(-1.5px, -2.5px) rotate(-0.5deg)
+    }
+    96% {
+        -ms-transform: translate(1.5px, -1.5px) rotate(-0.5deg)
+    }
+    98% {
+        -ms-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+}
+@keyframes shake-base {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg)
+    }
+    4% {
+        transform: translate(-2.5px, -1.5px) rotate(-1.5deg)
+    }
+    6% {
+        transform: translate(-0.5px, 1.5px) rotate(-1.5deg)
+    }
+    8% {
+        transform: translate(1.5px, -0.5px) rotate(-1.5deg)
+    }
+    10% {
+        transform: translate(0.5px, -0.5px) rotate(-0.5deg)
+    }
+    12% {
+        transform: translate(0.5px, -1.5px) rotate(-0.5deg)
+    }
+    14% {
+        transform: translate(-0.5px, 0.5px) rotate(-1.5deg)
+    }
+    16% {
+        transform: translate(1.5px, -0.5px) rotate(0.5deg)
+    }
+    18% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    20% {
+        transform: translate(-2.5px, 0.5px) rotate(0.5deg)
+    }
+    22% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.5deg)
+    }
+    24% {
+        transform: translate(1.5px, -1.5px) rotate(0.5deg)
+    }
+    26% {
+        transform: translate(-2.5px, 1.5px) rotate(-0.5deg)
+    }
+    28% {
+        transform: translate(-2.5px, 0.5px) rotate(-0.5deg)
+    }
+    30% {
+        transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    32% {
+        transform: translate(0.5px, 1.5px) rotate(0.5deg)
+    }
+    34% {
+        transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    36% {
+        transform: translate(1.5px, -1.5px) rotate(-0.5deg)
+    }
+    38% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg)
+    }
+    40% {
+        transform: translate(0.5px, -2.5px) rotate(-0.5deg)
+    }
+    42% {
+        transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    44% {
+        transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    46% {
+        transform: translate(-1.5px, -0.5px) rotate(-0.5deg)
+    }
+    48% {
+        transform: translate(-2.5px, 1.5px) rotate(-0.5deg)
+    }
+    50% {
+        transform: translate(-0.5px, -2.5px) rotate(0.5deg)
+    }
+    52% {
+        transform: translate(0.5px, 1.5px) rotate(-1.5deg)
+    }
+    54% {
+        transform: translate(-0.5px, -2.5px) rotate(0.5deg)
+    }
+    56% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.5deg)
+    }
+    58% {
+        transform: translate(-0.5px, 1.5px) rotate(0.5deg)
+    }
+    60% {
+        transform: translate(0.5px, -2.5px) rotate(0.5deg)
+    }
+    62% {
+        transform: translate(1.5px, -2.5px) rotate(0.5deg)
+    }
+    64% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg)
+    }
+    66% {
+        transform: translate(-0.5px, 1.5px) rotate(-0.5deg)
+    }
+    68% {
+        transform: translate(-1.5px, -0.5px) rotate(0.5deg)
+    }
+    70% {
+        transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    72% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    74% {
+        transform: translate(1.5px, -1.5px) rotate(-1.5deg)
+    }
+    76% {
+        transform: translate(1.5px, 1.5px) rotate(-1.5deg)
+    }
+    78% {
+        transform: translate(-2.5px, -1.5px) rotate(-1.5deg)
+    }
+    80% {
+        transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    82% {
+        transform: translate(-2.5px, -1.5px) rotate(0.5deg)
+    }
+    84% {
+        transform: translate(-0.5px, -1.5px) rotate(-0.5deg)
+    }
+    86% {
+        transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    88% {
+        transform: translate(1.5px, 0.5px) rotate(-0.5deg)
+    }
+    90% {
+        transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    92% {
+        transform: translate(0.5px, 0.5px) rotate(-1.5deg)
+    }
+    94% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    96% {
+        transform: translate(-1.5px, -1.5px) rotate(-1.5deg)
+    }
+    98% {
+        transform: translate(-2.5px, -0.5px) rotate(-1.5deg)
+    }
+}
+@-webkit-keyframes shake-little {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    4% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    6% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    8% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    10% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    12% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    14% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    16% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    18% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    20% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    22% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    24% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    26% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    30% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    32% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    34% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    36% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    38% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    40% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    42% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    44% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    46% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    48% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    52% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    54% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    56% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    58% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    60% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    62% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    64% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    66% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    68% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    70% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    72% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    74% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    76% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    78% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    80% {
+        -webkit-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    82% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    84% {
+        -webkit-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    86% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    88% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    90% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    92% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    94% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    96% {
+        -webkit-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    98% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+}
+@-ms-keyframes shake-little {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    4% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    6% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    8% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    10% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    12% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    14% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    16% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    18% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    20% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    22% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    24% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    26% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    28% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    30% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    32% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    34% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    36% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    38% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    40% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    42% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    44% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    46% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    48% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    50% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    52% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    54% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    56% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    58% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    60% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    62% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    64% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    66% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    68% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    70% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    72% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    74% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    76% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    78% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    80% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    82% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    84% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    86% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    88% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    90% {
+        -ms-transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    92% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    94% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    96% {
+        -ms-transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    98% {
+        -ms-transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+}
+@keyframes shake-little {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    4% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    6% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    8% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    10% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    12% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    14% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    16% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    18% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    20% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    22% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    24% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    26% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    28% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    30% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    32% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    34% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    36% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    38% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    40% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    42% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    44% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    46% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    48% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    50% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    52% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    54% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    56% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    58% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    60% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    62% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    64% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    66% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    68% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    70% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    72% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    74% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    76% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    78% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    80% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    82% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    84% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    86% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    88% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    90% {
+        transform: translate(-1px, -1px) rotate(-0.5deg)
+    }
+    92% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    94% {
+        transform: translate(-1px, 0px) rotate(-0.5deg)
+    }
+    96% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+    98% {
+        transform: translate(0px, -1px) rotate(-0.5deg)
+    }
+}
+@-webkit-keyframes shake-slow {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(-1px, 8px) rotate(1.5deg)
+    }
+    4% {
+        -webkit-transform: translate(7px, 0px) rotate(-0.5deg)
+    }
+    6% {
+        -webkit-transform: translate(8px, 8px) rotate(-3.5deg)
+    }
+    8% {
+        -webkit-transform: translate(-4px, -3px) rotate(-1.5deg)
+    }
+    10% {
+        -webkit-transform: translate(5px, 0px) rotate(-2.5deg)
+    }
+    12% {
+        -webkit-transform: translate(-10px, -3px) rotate(-3.5deg)
+    }
+    14% {
+        -webkit-transform: translate(5px, 7px) rotate(2.5deg)
+    }
+    16% {
+        -webkit-transform: translate(8px, -8px) rotate(-1.5deg)
+    }
+    18% {
+        -webkit-transform: translate(9px, -6px) rotate(-3.5deg)
+    }
+    20% {
+        -webkit-transform: translate(3px, 1px) rotate(-0.5deg)
+    }
+    22% {
+        -webkit-transform: translate(6px, 8px) rotate(-2.5deg)
+    }
+    24% {
+        -webkit-transform: translate(-8px, -1px) rotate(2.5deg)
+    }
+    26% {
+        -webkit-transform: translate(7px, -10px) rotate(0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(7px, -4px) rotate(-3.5deg)
+    }
+    30% {
+        -webkit-transform: translate(-2px, -6px) rotate(-1.5deg)
+    }
+    32% {
+        -webkit-transform: translate(-1px, 0px) rotate(2.5deg)
+    }
+    34% {
+        -webkit-transform: translate(6px, 2px) rotate(-0.5deg)
+    }
+    36% {
+        -webkit-transform: translate(2px, 7px) rotate(1.5deg)
+    }
+    38% {
+        -webkit-transform: translate(2px, -9px) rotate(1.5deg)
+    }
+    40% {
+        -webkit-transform: translate(-5px, -1px) rotate(-0.5deg)
+    }
+    42% {
+        -webkit-transform: translate(-8px, 2px) rotate(-0.5deg)
+    }
+    44% {
+        -webkit-transform: translate(-4px, 3px) rotate(0.5deg)
+    }
+    46% {
+        -webkit-transform: translate(-10px, -2px) rotate(-0.5deg)
+    }
+    48% {
+        -webkit-transform: translate(1px, 9px) rotate(1.5deg)
+    }
+    50% {
+        -webkit-transform: translate(6px, 7px) rotate(1.5deg)
+    }
+    52% {
+        -webkit-transform: translate(-8px, 4px) rotate(0.5deg)
+    }
+    54% {
+        -webkit-transform: translate(6px, -8px) rotate(-2.5deg)
+    }
+    56% {
+        -webkit-transform: translate(2px, -9px) rotate(-2.5deg)
+    }
+    58% {
+        -webkit-transform: translate(-2px, -9px) rotate(0.5deg)
+    }
+    60% {
+        -webkit-transform: translate(2px, 7px) rotate(-0.5deg)
+    }
+    62% {
+        -webkit-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    64% {
+        -webkit-transform: translate(-9px, -4px) rotate(-3.5deg)
+    }
+    66% {
+        -webkit-transform: translate(6px, -6px) rotate(0.5deg)
+    }
+    68% {
+        -webkit-transform: translate(0px, -7px) rotate(-2.5deg)
+    }
+    70% {
+        -webkit-transform: translate(-10px, 1px) rotate(1.5deg)
+    }
+    72% {
+        -webkit-transform: translate(-7px, 9px) rotate(2.5deg)
+    }
+    74% {
+        -webkit-transform: translate(2px, -6px) rotate(-0.5deg)
+    }
+    76% {
+        -webkit-transform: translate(5px, 1px) rotate(-0.5deg)
+    }
+    78% {
+        -webkit-transform: translate(-1px, 5px) rotate(2.5deg)
+    }
+    80% {
+        -webkit-transform: translate(3px, 7px) rotate(2.5deg)
+    }
+    82% {
+        -webkit-transform: translate(-6px, -7px) rotate(-0.5deg)
+    }
+    84% {
+        -webkit-transform: translate(-8px, 8px) rotate(-2.5deg)
+    }
+    86% {
+        -webkit-transform: translate(8px, 3px) rotate(-2.5deg)
+    }
+    88% {
+        -webkit-transform: translate(-8px, 3px) rotate(-1.5deg)
+    }
+    90% {
+        -webkit-transform: translate(-7px, -4px) rotate(-3.5deg)
+    }
+    92% {
+        -webkit-transform: translate(-8px, 4px) rotate(2.5deg)
+    }
+    94% {
+        -webkit-transform: translate(-6px, -6px) rotate(-3.5deg)
+    }
+    96% {
+        -webkit-transform: translate(-3px, 2px) rotate(-3.5deg)
+    }
+    98% {
+        -webkit-transform: translate(2px, 1px) rotate(-0.5deg)
+    }
+}
+@-ms-keyframes shake-slow {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(-9px, 1px) rotate(-1.5deg)
+    }
+    4% {
+        -ms-transform: translate(-10px, -1px) rotate(-3.5deg)
+    }
+    6% {
+        -ms-transform: translate(6px, 2px) rotate(-1.5deg)
+    }
+    8% {
+        -ms-transform: translate(-3px, -6px) rotate(-1.5deg)
+    }
+    10% {
+        -ms-transform: translate(-10px, -3px) rotate(-0.5deg)
+    }
+    12% {
+        -ms-transform: translate(-8px, 6px) rotate(-2.5deg)
+    }
+    14% {
+        -ms-transform: translate(7px, 5px) rotate(-1.5deg)
+    }
+    16% {
+        -ms-transform: translate(2px, 2px) rotate(1.5deg)
+    }
+    18% {
+        -ms-transform: translate(8px, -2px) rotate(-3.5deg)
+    }
+    20% {
+        -ms-transform: translate(-9px, 3px) rotate(-3.5deg)
+    }
+    22% {
+        -ms-transform: translate(8px, -4px) rotate(-1.5deg)
+    }
+    24% {
+        -ms-transform: translate(-1px, -7px) rotate(2.5deg)
+    }
+    26% {
+        -ms-transform: translate(9px, 9px) rotate(-0.5deg)
+    }
+    28% {
+        -ms-transform: translate(9px, -4px) rotate(-3.5deg)
+    }
+    30% {
+        -ms-transform: translate(6px, -7px) rotate(-0.5deg)
+    }
+    32% {
+        -ms-transform: translate(9px, 2px) rotate(1.5deg)
+    }
+    34% {
+        -ms-transform: translate(3px, -9px) rotate(2.5deg)
+    }
+    36% {
+        -ms-transform: translate(-6px, -4px) rotate(2.5deg)
+    }
+    38% {
+        -ms-transform: translate(-5px, -9px) rotate(0.5deg)
+    }
+    40% {
+        -ms-transform: translate(6px, 9px) rotate(-2.5deg)
+    }
+    42% {
+        -ms-transform: translate(5px, -5px) rotate(0.5deg)
+    }
+    44% {
+        -ms-transform: translate(8px, 5px) rotate(-3.5deg)
+    }
+    46% {
+        -ms-transform: translate(-2px, 9px) rotate(1.5deg)
+    }
+    48% {
+        -ms-transform: translate(-10px, -5px) rotate(-2.5deg)
+    }
+    50% {
+        -ms-transform: translate(8px, -1px) rotate(-3.5deg)
+    }
+    52% {
+        -ms-transform: translate(-5px, -7px) rotate(2.5deg)
+    }
+    54% {
+        -ms-transform: translate(7px, 0px) rotate(2.5deg)
+    }
+    56% {
+        -ms-transform: translate(-5px, -1px) rotate(-0.5deg)
+    }
+    58% {
+        -ms-transform: translate(0px, -4px) rotate(-3.5deg)
+    }
+    60% {
+        -ms-transform: translate(-10px, 2px) rotate(2.5deg)
+    }
+    62% {
+        -ms-transform: translate(9px, 8px) rotate(0.5deg)
+    }
+    64% {
+        -ms-transform: translate(-4px, -4px) rotate(-1.5deg)
+    }
+    66% {
+        -ms-transform: translate(-1px, -9px) rotate(-0.5deg)
+    }
+    68% {
+        -ms-transform: translate(-6px, -9px) rotate(-2.5deg)
+    }
+    70% {
+        -ms-transform: translate(-6px, -8px) rotate(-1.5deg)
+    }
+    72% {
+        -ms-transform: translate(-2px, -3px) rotate(-2.5deg)
+    }
+    74% {
+        -ms-transform: translate(-8px, 1px) rotate(-0.5deg)
+    }
+    76% {
+        -ms-transform: translate(-7px, 7px) rotate(2.5deg)
+    }
+    78% {
+        -ms-transform: translate(7px, 2px) rotate(-3.5deg)
+    }
+    80% {
+        -ms-transform: translate(-10px, -4px) rotate(-0.5deg)
+    }
+    82% {
+        -ms-transform: translate(2px, -9px) rotate(1.5deg)
+    }
+    84% {
+        -ms-transform: translate(3px, 5px) rotate(1.5deg)
+    }
+    86% {
+        -ms-transform: translate(5px, 2px) rotate(2.5deg)
+    }
+    88% {
+        -ms-transform: translate(-5px, -1px) rotate(-1.5deg)
+    }
+    90% {
+        -ms-transform: translate(-1px, -9px) rotate(1.5deg)
+    }
+    92% {
+        -ms-transform: translate(8px, -6px) rotate(-3.5deg)
+    }
+    94% {
+        -ms-transform: translate(7px, -9px) rotate(-2.5deg)
+    }
+    96% {
+        -ms-transform: translate(4px, -5px) rotate(2.5deg)
+    }
+    98% {
+        -ms-transform: translate(8px, 0px) rotate(-3.5deg)
+    }
+}
+@keyframes shake-slow {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(-6px, -8px) rotate(2.5deg)
+    }
+    4% {
+        transform: translate(3px, -9px) rotate(-0.5deg)
+    }
+    6% {
+        transform: translate(3px, -8px) rotate(2.5deg)
+    }
+    8% {
+        transform: translate(0px, 5px) rotate(0.5deg)
+    }
+    10% {
+        transform: translate(3px, 2px) rotate(0.5deg)
+    }
+    12% {
+        transform: translate(8px, 0px) rotate(0.5deg)
+    }
+    14% {
+        transform: translate(4px, 7px) rotate(-3.5deg)
+    }
+    16% {
+        transform: translate(-4px, 0px) rotate(-0.5deg)
+    }
+    18% {
+        transform: translate(1px, 3px) rotate(-1.5deg)
+    }
+    20% {
+        transform: translate(-8px, -1px) rotate(-3.5deg)
+    }
+    22% {
+        transform: translate(5px, 9px) rotate(2.5deg)
+    }
+    24% {
+        transform: translate(-9px, -10px) rotate(-2.5deg)
+    }
+    26% {
+        transform: translate(0px, 7px) rotate(-1.5deg)
+    }
+    28% {
+        transform: translate(-10px, 7px) rotate(2.5deg)
+    }
+    30% {
+        transform: translate(8px, -7px) rotate(-1.5deg)
+    }
+    32% {
+        transform: translate(0px, -8px) rotate(-0.5deg)
+    }
+    34% {
+        transform: translate(9px, 7px) rotate(-0.5deg)
+    }
+    36% {
+        transform: translate(-7px, 6px) rotate(0.5deg)
+    }
+    38% {
+        transform: translate(8px, -10px) rotate(-0.5deg)
+    }
+    40% {
+        transform: translate(8px, 0px) rotate(0.5deg)
+    }
+    42% {
+        transform: translate(0px, -2px) rotate(1.5deg)
+    }
+    44% {
+        transform: translate(5px, -2px) rotate(-0.5deg)
+    }
+    46% {
+        transform: translate(1px, -10px) rotate(-2.5deg)
+    }
+    48% {
+        transform: translate(4px, -1px) rotate(2.5deg)
+    }
+    50% {
+        transform: translate(-5px, -4px) rotate(2.5deg)
+    }
+    52% {
+        transform: translate(3px, 2px) rotate(-3.5deg)
+    }
+    54% {
+        transform: translate(1px, -6px) rotate(-0.5deg)
+    }
+    56% {
+        transform: translate(-3px, -4px) rotate(-0.5deg)
+    }
+    58% {
+        transform: translate(-10px, -10px) rotate(2.5deg)
+    }
+    60% {
+        transform: translate(8px, 7px) rotate(-3.5deg)
+    }
+    62% {
+        transform: translate(9px, -6px) rotate(-3.5deg)
+    }
+    64% {
+        transform: translate(-5px, 8px) rotate(-0.5deg)
+    }
+    66% {
+        transform: translate(1px, -3px) rotate(0.5deg)
+    }
+    68% {
+        transform: translate(-6px, 9px) rotate(1.5deg)
+    }
+    70% {
+        transform: translate(-5px, 8px) rotate(-1.5deg)
+    }
+    72% {
+        transform: translate(-10px, -2px) rotate(2.5deg)
+    }
+    74% {
+        transform: translate(0px, -4px) rotate(1.5deg)
+    }
+    76% {
+        transform: translate(-2px, -5px) rotate(0.5deg)
+    }
+    78% {
+        transform: translate(-2px, 9px) rotate(-3.5deg)
+    }
+    80% {
+        transform: translate(7px, 4px) rotate(-3.5deg)
+    }
+    82% {
+        transform: translate(-1px, -4px) rotate(-1.5deg)
+    }
+    84% {
+        transform: translate(3px, -6px) rotate(0.5deg)
+    }
+    86% {
+        transform: translate(7px, -8px) rotate(-1.5deg)
+    }
+    88% {
+        transform: translate(4px, -9px) rotate(1.5deg)
+    }
+    90% {
+        transform: translate(1px, -6px) rotate(2.5deg)
+    }
+    92% {
+        transform: translate(-8px, -1px) rotate(-1.5deg)
+    }
+    94% {
+        transform: translate(-4px, -1px) rotate(0.5deg)
+    }
+    96% {
+        transform: translate(-6px, 9px) rotate(1.5deg)
+    }
+    98% {
+        transform: translate(7px, 4px) rotate(-0.5deg)
+    }
+}
+@-webkit-keyframes shake-hard {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(5px, -4px) rotate(-2.5deg)
+    }
+    4% {
+        -webkit-transform: translate(-10px, 5px) rotate(2.5deg)
+    }
+    6% {
+        -webkit-transform: translate(0px, 5px) rotate(-3.5deg)
+    }
+    8% {
+        -webkit-transform: translate(-6px, -10px) rotate(-1.5deg)
+    }
+    10% {
+        -webkit-transform: translate(2px, -7px) rotate(1.5deg)
+    }
+    12% {
+        -webkit-transform: translate(0px, 1px) rotate(0.5deg)
+    }
+    14% {
+        -webkit-transform: translate(7px, -9px) rotate(-0.5deg)
+    }
+    16% {
+        -webkit-transform: translate(-8px, 4px) rotate(-2.5deg)
+    }
+    18% {
+        -webkit-transform: translate(-9px, -4px) rotate(-0.5deg)
+    }
+    20% {
+        -webkit-transform: translate(-8px, -8px) rotate(0.5deg)
+    }
+    22% {
+        -webkit-transform: translate(-7px, 0px) rotate(-0.5deg)
+    }
+    24% {
+        -webkit-transform: translate(-10px, -5px) rotate(-3.5deg)
+    }
+    26% {
+        -webkit-transform: translate(1px, -10px) rotate(-0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(5px, 2px) rotate(-1.5deg)
+    }
+    30% {
+        -webkit-transform: translate(-8px, 5px) rotate(-0.5deg)
+    }
+    32% {
+        -webkit-transform: translate(-4px, 2px) rotate(1.5deg)
+    }
+    34% {
+        -webkit-transform: translate(-9px, 8px) rotate(1.5deg)
+    }
+    36% {
+        -webkit-transform: translate(8px, -3px) rotate(1.5deg)
+    }
+    38% {
+        -webkit-transform: translate(-10px, 7px) rotate(-0.5deg)
+    }
+    40% {
+        -webkit-transform: translate(-7px, 1px) rotate(-3.5deg)
+    }
+    42% {
+        -webkit-transform: translate(-9px, 7px) rotate(0.5deg)
+    }
+    44% {
+        -webkit-transform: translate(4px, 2px) rotate(-3.5deg)
+    }
+    46% {
+        -webkit-transform: translate(8px, 4px) rotate(2.5deg)
+    }
+    48% {
+        -webkit-transform: translate(-5px, -1px) rotate(-2.5deg)
+    }
+    50% {
+        -webkit-transform: translate(-7px, 5px) rotate(-2.5deg)
+    }
+    52% {
+        -webkit-transform: translate(-1px, -7px) rotate(-3.5deg)
+    }
+    54% {
+        -webkit-transform: translate(-2px, -3px) rotate(0.5deg)
+    }
+    56% {
+        -webkit-transform: translate(-4px, -6px) rotate(-2.5deg)
+    }
+    58% {
+        -webkit-transform: translate(5px, 4px) rotate(-2.5deg)
+    }
+    60% {
+        -webkit-transform: translate(-3px, 2px) rotate(-0.5deg)
+    }
+    62% {
+        -webkit-transform: translate(-4px, -10px) rotate(-1.5deg)
+    }
+    64% {
+        -webkit-transform: translate(-4px, -9px) rotate(-2.5deg)
+    }
+    66% {
+        -webkit-transform: translate(3px, -8px) rotate(-1.5deg)
+    }
+    68% {
+        -webkit-transform: translate(-5px, -2px) rotate(0.5deg)
+    }
+    70% {
+        -webkit-transform: translate(-3px, -1px) rotate(-3.5deg)
+    }
+    72% {
+        -webkit-transform: translate(9px, -2px) rotate(0.5deg)
+    }
+    74% {
+        -webkit-transform: translate(7px, -6px) rotate(-2.5deg)
+    }
+    76% {
+        -webkit-transform: translate(1px, 2px) rotate(-1.5deg)
+    }
+    78% {
+        -webkit-transform: translate(-3px, -5px) rotate(-1.5deg)
+    }
+    80% {
+        -webkit-transform: translate(-5px, 3px) rotate(2.5deg)
+    }
+    82% {
+        -webkit-transform: translate(-2px, -1px) rotate(-3.5deg)
+    }
+    84% {
+        -webkit-transform: translate(-8px, 7px) rotate(0.5deg)
+    }
+    86% {
+        -webkit-transform: translate(-2px, 4px) rotate(-0.5deg)
+    }
+    88% {
+        -webkit-transform: translate(4px, 7px) rotate(-3.5deg)
+    }
+    90% {
+        -webkit-transform: translate(2px, 7px) rotate(0.5deg)
+    }
+    92% {
+        -webkit-transform: translate(-3px, 6px) rotate(-3.5deg)
+    }
+    94% {
+        -webkit-transform: translate(1px, 8px) rotate(1.5deg)
+    }
+    96% {
+        -webkit-transform: translate(-8px, -2px) rotate(1.5deg)
+    }
+    98% {
+        -webkit-transform: translate(-5px, 6px) rotate(0.5deg)
+    }
+}
+@-ms-keyframes shake-hard {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(-1px, 3px) rotate(-1.5deg)
+    }
+    4% {
+        -ms-transform: translate(0px, -6px) rotate(2.5deg)
+    }
+    6% {
+        -ms-transform: translate(3px, 6px) rotate(-0.5deg)
+    }
+    8% {
+        -ms-transform: translate(-1px, -7px) rotate(0.5deg)
+    }
+    10% {
+        -ms-transform: translate(-3px, -2px) rotate(-2.5deg)
+    }
+    12% {
+        -ms-transform: translate(-6px, 7px) rotate(-3.5deg)
+    }
+    14% {
+        -ms-transform: translate(4px, -4px) rotate(1.5deg)
+    }
+    16% {
+        -ms-transform: translate(-1px, 4px) rotate(0.5deg)
+    }
+    18% {
+        -ms-transform: translate(2px, 9px) rotate(0.5deg)
+    }
+    20% {
+        -ms-transform: translate(-4px, -2px) rotate(0.5deg)
+    }
+    22% {
+        -ms-transform: translate(0px, 1px) rotate(0.5deg)
+    }
+    24% {
+        -ms-transform: translate(-2px, 0px) rotate(1.5deg)
+    }
+    26% {
+        -ms-transform: translate(3px, -2px) rotate(-3.5deg)
+    }
+    28% {
+        -ms-transform: translate(4px, -9px) rotate(-0.5deg)
+    }
+    30% {
+        -ms-transform: translate(6px, -7px) rotate(2.5deg)
+    }
+    32% {
+        -ms-transform: translate(6px, -9px) rotate(-2.5deg)
+    }
+    34% {
+        -ms-transform: translate(1px, 4px) rotate(-3.5deg)
+    }
+    36% {
+        -ms-transform: translate(7px, -5px) rotate(-0.5deg)
+    }
+    38% {
+        -ms-transform: translate(9px, -6px) rotate(-1.5deg)
+    }
+    40% {
+        -ms-transform: translate(-7px, 6px) rotate(2.5deg)
+    }
+    42% {
+        -ms-transform: translate(-8px, -9px) rotate(0.5deg)
+    }
+    44% {
+        -ms-transform: translate(-9px, -6px) rotate(1.5deg)
+    }
+    46% {
+        -ms-transform: translate(6px, 6px) rotate(-3.5deg)
+    }
+    48% {
+        -ms-transform: translate(-6px, 9px) rotate(-1.5deg)
+    }
+    50% {
+        -ms-transform: translate(8px, 1px) rotate(2.5deg)
+    }
+    52% {
+        -ms-transform: translate(-8px, 2px) rotate(-3.5deg)
+    }
+    54% {
+        -ms-transform: translate(3px, 3px) rotate(0.5deg)
+    }
+    56% {
+        -ms-transform: translate(-7px, -7px) rotate(0.5deg)
+    }
+    58% {
+        -ms-transform: translate(-6px, -5px) rotate(0.5deg)
+    }
+    60% {
+        -ms-transform: translate(-4px, 9px) rotate(-3.5deg)
+    }
+    62% {
+        -ms-transform: translate(-2px, -4px) rotate(-3.5deg)
+    }
+    64% {
+        -ms-transform: translate(9px, -2px) rotate(-3.5deg)
+    }
+    66% {
+        -ms-transform: translate(-4px, 0px) rotate(-0.5deg)
+    }
+    68% {
+        -ms-transform: translate(3px, -2px) rotate(-2.5deg)
+    }
+    70% {
+        -ms-transform: translate(6px, -6px) rotate(-3.5deg)
+    }
+    72% {
+        -ms-transform: translate(4px, -6px) rotate(-3.5deg)
+    }
+    74% {
+        -ms-transform: translate(1px, 7px) rotate(-0.5deg)
+    }
+    76% {
+        -ms-transform: translate(-2px, 8px) rotate(2.5deg)
+    }
+    78% {
+        -ms-transform: translate(2px, -2px) rotate(-1.5deg)
+    }
+    80% {
+        -ms-transform: translate(6px, 8px) rotate(0.5deg)
+    }
+    82% {
+        -ms-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    84% {
+        -ms-transform: translate(-5px, -5px) rotate(-2.5deg)
+    }
+    86% {
+        -ms-transform: translate(-3px, 2px) rotate(2.5deg)
+    }
+    88% {
+        -ms-transform: translate(7px, -9px) rotate(-2.5deg)
+    }
+    90% {
+        -ms-transform: translate(5px, -5px) rotate(-3.5deg)
+    }
+    92% {
+        -ms-transform: translate(-2px, 8px) rotate(0.5deg)
+    }
+    94% {
+        -ms-transform: translate(-5px, -9px) rotate(-2.5deg)
+    }
+    96% {
+        -ms-transform: translate(8px, -9px) rotate(0.5deg)
+    }
+    98% {
+        -ms-transform: translate(-9px, 4px) rotate(1.5deg)
+    }
+}
+@keyframes shake-hard {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(0px, 4px) rotate(0.5deg)
+    }
+    4% {
+        transform: translate(6px, -2px) rotate(-3.5deg)
+    }
+    6% {
+        transform: translate(-3px, -8px) rotate(-2.5deg)
+    }
+    8% {
+        transform: translate(-1px, 9px) rotate(2.5deg)
+    }
+    10% {
+        transform: translate(6px, 5px) rotate(-2.5deg)
+    }
+    12% {
+        transform: translate(-3px, 6px) rotate(-2.5deg)
+    }
+    14% {
+        transform: translate(-9px, 1px) rotate(-0.5deg)
+    }
+    16% {
+        transform: translate(-6px, 5px) rotate(2.5deg)
+    }
+    18% {
+        transform: translate(-9px, 8px) rotate(0.5deg)
+    }
+    20% {
+        transform: translate(-9px, 6px) rotate(-2.5deg)
+    }
+    22% {
+        transform: translate(-5px, 6px) rotate(0.5deg)
+    }
+    24% {
+        transform: translate(6px, 3px) rotate(1.5deg)
+    }
+    26% {
+        transform: translate(8px, -10px) rotate(-2.5deg)
+    }
+    28% {
+        transform: translate(0px, -5px) rotate(-3.5deg)
+    }
+    30% {
+        transform: translate(6px, -10px) rotate(2.5deg)
+    }
+    32% {
+        transform: translate(3px, 0px) rotate(-3.5deg)
+    }
+    34% {
+        transform: translate(4px, -6px) rotate(-3.5deg)
+    }
+    36% {
+        transform: translate(-5px, 4px) rotate(-0.5deg)
+    }
+    38% {
+        transform: translate(-7px, -6px) rotate(-1.5deg)
+    }
+    40% {
+        transform: translate(4px, -9px) rotate(-3.5deg)
+    }
+    42% {
+        transform: translate(-9px, -2px) rotate(-1.5deg)
+    }
+    44% {
+        transform: translate(0px, -3px) rotate(1.5deg)
+    }
+    46% {
+        transform: translate(-5px, -5px) rotate(-2.5deg)
+    }
+    48% {
+        transform: translate(-6px, 2px) rotate(-3.5deg)
+    }
+    50% {
+        transform: translate(0px, -5px) rotate(-1.5deg)
+    }
+    52% {
+        transform: translate(6px, 1px) rotate(-2.5deg)
+    }
+    54% {
+        transform: translate(9px, 6px) rotate(2.5deg)
+    }
+    56% {
+        transform: translate(-8px, -10px) rotate(-0.5deg)
+    }
+    58% {
+        transform: translate(6px, -2px) rotate(-1.5deg)
+    }
+    60% {
+        transform: translate(-4px, -8px) rotate(-1.5deg)
+    }
+    62% {
+        transform: translate(0px, -9px) rotate(0.5deg)
+    }
+    64% {
+        transform: translate(-7px, -6px) rotate(2.5deg)
+    }
+    66% {
+        transform: translate(8px, 6px) rotate(2.5deg)
+    }
+    68% {
+        transform: translate(-10px, -7px) rotate(-2.5deg)
+    }
+    70% {
+        transform: translate(-1px, 9px) rotate(-2.5deg)
+    }
+    72% {
+        transform: translate(-6px, 8px) rotate(-2.5deg)
+    }
+    74% {
+        transform: translate(2px, 5px) rotate(-1.5deg)
+    }
+    76% {
+        transform: translate(-7px, 6px) rotate(1.5deg)
+    }
+    78% {
+        transform: translate(3px, -9px) rotate(0.5deg)
+    }
+    80% {
+        transform: translate(-4px, -9px) rotate(-1.5deg)
+    }
+    82% {
+        transform: translate(0px, 7px) rotate(0.5deg)
+    }
+    84% {
+        transform: translate(-4px, -3px) rotate(-1.5deg)
+    }
+    86% {
+        transform: translate(-10px, 8px) rotate(-0.5deg)
+    }
+    88% {
+        transform: translate(-9px, 1px) rotate(-0.5deg)
+    }
+    90% {
+        transform: translate(-3px, 6px) rotate(1.5deg)
+    }
+    92% {
+        transform: translate(-8px, -10px) rotate(-3.5deg)
+    }
+    94% {
+        transform: translate(-8px, -7px) rotate(2.5deg)
+    }
+    96% {
+        transform: translate(-2px, 1px) rotate(2.5deg)
+    }
+    98% {
+        transform: translate(-3px, 4px) rotate(-2.5deg)
+    }
+}
+@-webkit-keyframes shake-horizontal {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    4% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    6% {
+        -webkit-transform: translate(7px, 0px) rotate(0deg)
+    }
+    8% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    10% {
+        -webkit-transform: translate(4px, 0px) rotate(0deg)
+    }
+    12% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    14% {
+        -webkit-transform: translate(7px, 0px) rotate(0deg)
+    }
+    16% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    18% {
+        -webkit-transform: translate(-5px, 0px) rotate(0deg)
+    }
+    20% {
+        -webkit-transform: translate(-10px, 0px) rotate(0deg)
+    }
+    22% {
+        -webkit-transform: translate(8px, 0px) rotate(0deg)
+    }
+    24% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    26% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    28% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    30% {
+        -webkit-transform: translate(7px, 0px) rotate(0deg)
+    }
+    32% {
+        -webkit-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    34% {
+        -webkit-transform: translate(-10px, 0px) rotate(0deg)
+    }
+    36% {
+        -webkit-transform: translate(8px, 0px) rotate(0deg)
+    }
+    38% {
+        -webkit-transform: translate(-5px, 0px) rotate(0deg)
+    }
+    40% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    42% {
+        -webkit-transform: translate(6px, 0px) rotate(0deg)
+    }
+    44% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    46% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    48% {
+        -webkit-transform: translate(9px, 0px) rotate(0deg)
+    }
+    50% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    52% {
+        -webkit-transform: translate(8px, 0px) rotate(0deg)
+    }
+    54% {
+        -webkit-transform: translate(4px, 0px) rotate(0deg)
+    }
+    56% {
+        -webkit-transform: translate(4px, 0px) rotate(0deg)
+    }
+    58% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    60% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    62% {
+        -webkit-transform: translate(-9px, 0px) rotate(0deg)
+    }
+    64% {
+        -webkit-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    66% {
+        -webkit-transform: translate(-10px, 0px) rotate(0deg)
+    }
+    68% {
+        -webkit-transform: translate(6px, 0px) rotate(0deg)
+    }
+    70% {
+        -webkit-transform: translate(7px, 0px) rotate(0deg)
+    }
+    72% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    74% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    76% {
+        -webkit-transform: translate(4px, 0px) rotate(0deg)
+    }
+    78% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    80% {
+        -webkit-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    82% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    84% {
+        -webkit-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    86% {
+        -webkit-transform: translate(5px, 0px) rotate(0deg)
+    }
+    88% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    90% {
+        -webkit-transform: translate(-7px, 0px) rotate(0deg)
+    }
+    92% {
+        -webkit-transform: translate(-4px, 0px) rotate(0deg)
+    }
+    94% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    96% {
+        -webkit-transform: translate(-9px, 0px) rotate(0deg)
+    }
+    98% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+}
+@-ms-keyframes shake-horizontal {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(-9px, 0px) rotate(0deg)
+    }
+    4% {
+        -ms-transform: translate(3px, 0px) rotate(0deg)
+    }
+    6% {
+        -ms-transform: translate(-10px, 0px) rotate(0deg)
+    }
+    8% {
+        -ms-transform: translate(2px, 0px) rotate(0deg)
+    }
+    10% {
+        -ms-transform: translate(5px, 0px) rotate(0deg)
+    }
+    12% {
+        -ms-transform: translate(-9px, 0px) rotate(0deg)
+    }
+    14% {
+        -ms-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    16% {
+        -ms-transform: translate(6px, 0px) rotate(0deg)
+    }
+    18% {
+        -ms-transform: translate(1px, 0px) rotate(0deg)
+    }
+    20% {
+        -ms-transform: translate(7px, 0px) rotate(0deg)
+    }
+    22% {
+        -ms-transform: translate(4px, 0px) rotate(0deg)
+    }
+    24% {
+        -ms-transform: translate(9px, 0px) rotate(0deg)
+    }
+    26% {
+        -ms-transform: translate(2px, 0px) rotate(0deg)
+    }
+    28% {
+        -ms-transform: translate(4px, 0px) rotate(0deg)
+    }
+    30% {
+        -ms-transform: translate(-9px, 0px) rotate(0deg)
+    }
+    32% {
+        -ms-transform: translate(9px, 0px) rotate(0deg)
+    }
+    34% {
+        -ms-transform: translate(-4px, 0px) rotate(0deg)
+    }
+    36% {
+        -ms-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    38% {
+        -ms-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    40% {
+        -ms-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    42% {
+        -ms-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    44% {
+        -ms-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    46% {
+        -ms-transform: translate(-7px, 0px) rotate(0deg)
+    }
+    48% {
+        -ms-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    50% {
+        -ms-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    52% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    54% {
+        -ms-transform: translate(6px, 0px) rotate(0deg)
+    }
+    56% {
+        -ms-transform: translate(1px, 0px) rotate(0deg)
+    }
+    58% {
+        -ms-transform: translate(-5px, 0px) rotate(0deg)
+    }
+    60% {
+        -ms-transform: translate(9px, 0px) rotate(0deg)
+    }
+    62% {
+        -ms-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    64% {
+        -ms-transform: translate(-5px, 0px) rotate(0deg)
+    }
+    66% {
+        -ms-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    68% {
+        -ms-transform: translate(5px, 0px) rotate(0deg)
+    }
+    70% {
+        -ms-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    72% {
+        -ms-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    74% {
+        -ms-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    76% {
+        -ms-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    78% {
+        -ms-transform: translate(1px, 0px) rotate(0deg)
+    }
+    80% {
+        -ms-transform: translate(4px, 0px) rotate(0deg)
+    }
+    82% {
+        -ms-transform: translate(7px, 0px) rotate(0deg)
+    }
+    84% {
+        -ms-transform: translate(-7px, 0px) rotate(0deg)
+    }
+    86% {
+        -ms-transform: translate(-4px, 0px) rotate(0deg)
+    }
+    88% {
+        -ms-transform: translate(9px, 0px) rotate(0deg)
+    }
+    90% {
+        -ms-transform: translate(-6px, 0px) rotate(0deg)
+    }
+    92% {
+        -ms-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    94% {
+        -ms-transform: translate(-8px, 0px) rotate(0deg)
+    }
+    96% {
+        -ms-transform: translate(4px, 0px) rotate(0deg)
+    }
+    98% {
+        -ms-transform: translate(6px, 0px) rotate(0deg)
+    }
+}
+@keyframes shake-horizontal {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(-7px, 0px) rotate(0deg)
+    }
+    4% {
+        transform: translate(7px, 0px) rotate(0deg)
+    }
+    6% {
+        transform: translate(5px, 0px) rotate(0deg)
+    }
+    8% {
+        transform: translate(9px, 0px) rotate(0deg)
+    }
+    10% {
+        transform: translate(9px, 0px) rotate(0deg)
+    }
+    12% {
+        transform: translate(3px, 0px) rotate(0deg)
+    }
+    14% {
+        transform: translate(9px, 0px) rotate(0deg)
+    }
+    16% {
+        transform: translate(-6px, 0px) rotate(0deg)
+    }
+    18% {
+        transform: translate(8px, 0px) rotate(0deg)
+    }
+    20% {
+        transform: translate(-2px, 0px) rotate(0deg)
+    }
+    22% {
+        transform: translate(-1px, 0px) rotate(0deg)
+    }
+    24% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    26% {
+        transform: translate(-6px, 0px) rotate(0deg)
+    }
+    28% {
+        transform: translate(-5px, 0px) rotate(0deg)
+    }
+    30% {
+        transform: translate(-4px, 0px) rotate(0deg)
+    }
+    32% {
+        transform: translate(-10px, 0px) rotate(0deg)
+    }
+    34% {
+        transform: translate(9px, 0px) rotate(0deg)
+    }
+    36% {
+        transform: translate(4px, 0px) rotate(0deg)
+    }
+    38% {
+        transform: translate(-1px, 0px) rotate(0deg)
+    }
+    40% {
+        transform: translate(2px, 0px) rotate(0deg)
+    }
+    42% {
+        transform: translate(2px, 0px) rotate(0deg)
+    }
+    44% {
+        transform: translate(-4px, 0px) rotate(0deg)
+    }
+    46% {
+        transform: translate(8px, 0px) rotate(0deg)
+    }
+    48% {
+        transform: translate(-6px, 0px) rotate(0deg)
+    }
+    50% {
+        transform: translate(4px, 0px) rotate(0deg)
+    }
+    52% {
+        transform: translate(-5px, 0px) rotate(0deg)
+    }
+    54% {
+        transform: translate(6px, 0px) rotate(0deg)
+    }
+    56% {
+        transform: translate(-5px, 0px) rotate(0deg)
+    }
+    58% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    60% {
+        transform: translate(3px, 0px) rotate(0deg)
+    }
+    62% {
+        transform: translate(5px, 0px) rotate(0deg)
+    }
+    64% {
+        transform: translate(-4px, 0px) rotate(0deg)
+    }
+    66% {
+        transform: translate(-8px, 0px) rotate(0deg)
+    }
+    68% {
+        transform: translate(4px, 0px) rotate(0deg)
+    }
+    70% {
+        transform: translate(-5px, 0px) rotate(0deg)
+    }
+    72% {
+        transform: translate(7px, 0px) rotate(0deg)
+    }
+    74% {
+        transform: translate(-5px, 0px) rotate(0deg)
+    }
+    76% {
+        transform: translate(1px, 0px) rotate(0deg)
+    }
+    78% {
+        transform: translate(8px, 0px) rotate(0deg)
+    }
+    80% {
+        transform: translate(8px, 0px) rotate(0deg)
+    }
+    82% {
+        transform: translate(7px, 0px) rotate(0deg)
+    }
+    84% {
+        transform: translate(-10px, 0px) rotate(0deg)
+    }
+    86% {
+        transform: translate(9px, 0px) rotate(0deg)
+    }
+    88% {
+        transform: translate(-1px, 0px) rotate(0deg)
+    }
+    90% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    92% {
+        transform: translate(-2px, 0px) rotate(0deg)
+    }
+    94% {
+        transform: translate(5px, 0px) rotate(0deg)
+    }
+    96% {
+        transform: translate(5px, 0px) rotate(0deg)
+    }
+    98% {
+        transform: translate(-8px, 0px) rotate(0deg)
+    }
+}
+@-webkit-keyframes shake-vertical {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    4% {
+        -webkit-transform: translate(0px, -6px) rotate(0deg)
+    }
+    6% {
+        -webkit-transform: translate(0px, -7px) rotate(0deg)
+    }
+    8% {
+        -webkit-transform: translate(0px, -5px) rotate(0deg)
+    }
+    10% {
+        -webkit-transform: translate(0px, 1px) rotate(0deg)
+    }
+    12% {
+        -webkit-transform: translate(0px, -1px) rotate(0deg)
+    }
+    14% {
+        -webkit-transform: translate(0px, -9px) rotate(0deg)
+    }
+    16% {
+        -webkit-transform: translate(0px, -10px) rotate(0deg)
+    }
+    18% {
+        -webkit-transform: translate(0px, -9px) rotate(0deg)
+    }
+    20% {
+        -webkit-transform: translate(0px, 3px) rotate(0deg)
+    }
+    22% {
+        -webkit-transform: translate(0px, -7px) rotate(0deg)
+    }
+    24% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg)
+    }
+    26% {
+        -webkit-transform: translate(0px, 9px) rotate(0deg)
+    }
+    28% {
+        -webkit-transform: translate(0px, 8px) rotate(0deg)
+    }
+    30% {
+        -webkit-transform: translate(0px, 8px) rotate(0deg)
+    }
+    32% {
+        -webkit-transform: translate(0px, 4px) rotate(0deg)
+    }
+    34% {
+        -webkit-transform: translate(0px, -1px) rotate(0deg)
+    }
+    36% {
+        -webkit-transform: translate(0px, 7px) rotate(0deg)
+    }
+    38% {
+        -webkit-transform: translate(0px, 5px) rotate(0deg)
+    }
+    40% {
+        -webkit-transform: translate(0px, -5px) rotate(0deg)
+    }
+    42% {
+        -webkit-transform: translate(0px, 5px) rotate(0deg)
+    }
+    44% {
+        -webkit-transform: translate(0px, 4px) rotate(0deg)
+    }
+    46% {
+        -webkit-transform: translate(0px, 3px) rotate(0deg)
+    }
+    48% {
+        -webkit-transform: translate(0px, 6px) rotate(0deg)
+    }
+    50% {
+        -webkit-transform: translate(0px, -6px) rotate(0deg)
+    }
+    52% {
+        -webkit-transform: translate(0px, -3px) rotate(0deg)
+    }
+    54% {
+        -webkit-transform: translate(0px, -4px) rotate(0deg)
+    }
+    56% {
+        -webkit-transform: translate(0px, -5px) rotate(0deg)
+    }
+    58% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg)
+    }
+    60% {
+        -webkit-transform: translate(0px, -2px) rotate(0deg)
+    }
+    62% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg)
+    }
+    64% {
+        -webkit-transform: translate(0px, -7px) rotate(0deg)
+    }
+    66% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    68% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    70% {
+        -webkit-transform: translate(0px, -1px) rotate(0deg)
+    }
+    72% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg)
+    }
+    74% {
+        -webkit-transform: translate(0px, 3px) rotate(0deg)
+    }
+    76% {
+        -webkit-transform: translate(0px, 3px) rotate(0deg)
+    }
+    78% {
+        -webkit-transform: translate(0px, -10px) rotate(0deg)
+    }
+    80% {
+        -webkit-transform: translate(0px, -5px) rotate(0deg)
+    }
+    82% {
+        -webkit-transform: translate(0px, 9px) rotate(0deg)
+    }
+    84% {
+        -webkit-transform: translate(0px, 9px) rotate(0deg)
+    }
+    86% {
+        -webkit-transform: translate(0px, 1px) rotate(0deg)
+    }
+    88% {
+        -webkit-transform: translate(0px, 6px) rotate(0deg)
+    }
+    90% {
+        -webkit-transform: translate(0px, -2px) rotate(0deg)
+    }
+    92% {
+        -webkit-transform: translate(0px, 4px) rotate(0deg)
+    }
+    94% {
+        -webkit-transform: translate(0px, -4px) rotate(0deg)
+    }
+    96% {
+        -webkit-transform: translate(0px, -1px) rotate(0deg)
+    }
+    98% {
+        -webkit-transform: translate(0px, -8px) rotate(0deg)
+    }
+}
+@-ms-keyframes shake-vertical {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(0px, -5px) rotate(0deg)
+    }
+    4% {
+        -ms-transform: translate(0px, -1px) rotate(0deg)
+    }
+    6% {
+        -ms-transform: translate(0px, -8px) rotate(0deg)
+    }
+    8% {
+        -ms-transform: translate(0px, 5px) rotate(0deg)
+    }
+    10% {
+        -ms-transform: translate(0px, 9px) rotate(0deg)
+    }
+    12% {
+        -ms-transform: translate(0px, -3px) rotate(0deg)
+    }
+    14% {
+        -ms-transform: translate(0px, -7px) rotate(0deg)
+    }
+    16% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    18% {
+        -ms-transform: translate(0px, -7px) rotate(0deg)
+    }
+    20% {
+        -ms-transform: translate(0px, -6px) rotate(0deg)
+    }
+    22% {
+        -ms-transform: translate(0px, -7px) rotate(0deg)
+    }
+    24% {
+        -ms-transform: translate(0px, 2px) rotate(0deg)
+    }
+    26% {
+        -ms-transform: translate(0px, 5px) rotate(0deg)
+    }
+    28% {
+        -ms-transform: translate(0px, -3px) rotate(0deg)
+    }
+    30% {
+        -ms-transform: translate(0px, -5px) rotate(0deg)
+    }
+    32% {
+        -ms-transform: translate(0px, 6px) rotate(0deg)
+    }
+    34% {
+        -ms-transform: translate(0px, -1px) rotate(0deg)
+    }
+    36% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    38% {
+        -ms-transform: translate(0px, 4px) rotate(0deg)
+    }
+    40% {
+        -ms-transform: translate(0px, 6px) rotate(0deg)
+    }
+    42% {
+        -ms-transform: translate(0px, -8px) rotate(0deg)
+    }
+    44% {
+        -ms-transform: translate(0px, -6px) rotate(0deg)
+    }
+    46% {
+        -ms-transform: translate(0px, -9px) rotate(0deg)
+    }
+    48% {
+        -ms-transform: translate(0px, -3px) rotate(0deg)
+    }
+    50% {
+        -ms-transform: translate(0px, -3px) rotate(0deg)
+    }
+    52% {
+        -ms-transform: translate(0px, -2px) rotate(0deg)
+    }
+    54% {
+        -ms-transform: translate(0px, -3px) rotate(0deg)
+    }
+    56% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    58% {
+        -ms-transform: translate(0px, 8px) rotate(0deg)
+    }
+    60% {
+        -ms-transform: translate(0px, 9px) rotate(0deg)
+    }
+    62% {
+        -ms-transform: translate(0px, 7px) rotate(0deg)
+    }
+    64% {
+        -ms-transform: translate(0px, 1px) rotate(0deg)
+    }
+    66% {
+        -ms-transform: translate(0px, -5px) rotate(0deg)
+    }
+    68% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    70% {
+        -ms-transform: translate(0px, 9px) rotate(0deg)
+    }
+    72% {
+        -ms-transform: translate(0px, 4px) rotate(0deg)
+    }
+    74% {
+        -ms-transform: translate(0px, -4px) rotate(0deg)
+    }
+    76% {
+        -ms-transform: translate(0px, 5px) rotate(0deg)
+    }
+    78% {
+        -ms-transform: translate(0px, -5px) rotate(0deg)
+    }
+    80% {
+        -ms-transform: translate(0px, -2px) rotate(0deg)
+    }
+    82% {
+        -ms-transform: translate(0px, -8px) rotate(0deg)
+    }
+    84% {
+        -ms-transform: translate(0px, -5px) rotate(0deg)
+    }
+    86% {
+        -ms-transform: translate(0px, -9px) rotate(0deg)
+    }
+    88% {
+        -ms-transform: translate(0px, -8px) rotate(0deg)
+    }
+    90% {
+        -ms-transform: translate(0px, 7px) rotate(0deg)
+    }
+    92% {
+        -ms-transform: translate(0px, 5px) rotate(0deg)
+    }
+    94% {
+        -ms-transform: translate(0px, -6px) rotate(0deg)
+    }
+    96% {
+        -ms-transform: translate(0px, -2px) rotate(0deg)
+    }
+    98% {
+        -ms-transform: translate(0px, -1px) rotate(0deg)
+    }
+}
+@keyframes shake-vertical {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(0px, -2px) rotate(0deg)
+    }
+    4% {
+        transform: translate(0px, -3px) rotate(0deg)
+    }
+    6% {
+        transform: translate(0px, 9px) rotate(0deg)
+    }
+    8% {
+        transform: translate(0px, 7px) rotate(0deg)
+    }
+    10% {
+        transform: translate(0px, -6px) rotate(0deg)
+    }
+    12% {
+        transform: translate(0px, 6px) rotate(0deg)
+    }
+    14% {
+        transform: translate(0px, -3px) rotate(0deg)
+    }
+    16% {
+        transform: translate(0px, 6px) rotate(0deg)
+    }
+    18% {
+        transform: translate(0px, 8px) rotate(0deg)
+    }
+    20% {
+        transform: translate(0px, 9px) rotate(0deg)
+    }
+    22% {
+        transform: translate(0px, -4px) rotate(0deg)
+    }
+    24% {
+        transform: translate(0px, -7px) rotate(0deg)
+    }
+    26% {
+        transform: translate(0px, -9px) rotate(0deg)
+    }
+    28% {
+        transform: translate(0px, 7px) rotate(0deg)
+    }
+    30% {
+        transform: translate(0px, 7px) rotate(0deg)
+    }
+    32% {
+        transform: translate(0px, 6px) rotate(0deg)
+    }
+    34% {
+        transform: translate(0px, 4px) rotate(0deg)
+    }
+    36% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    38% {
+        transform: translate(0px, 4px) rotate(0deg)
+    }
+    40% {
+        transform: translate(0px, 7px) rotate(0deg)
+    }
+    42% {
+        transform: translate(0px, -5px) rotate(0deg)
+    }
+    44% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    46% {
+        transform: translate(0px, -2px) rotate(0deg)
+    }
+    48% {
+        transform: translate(0px, -5px) rotate(0deg)
+    }
+    50% {
+        transform: translate(0px, -4px) rotate(0deg)
+    }
+    52% {
+        transform: translate(0px, 1px) rotate(0deg)
+    }
+    54% {
+        transform: translate(0px, -1px) rotate(0deg)
+    }
+    56% {
+        transform: translate(0px, -2px) rotate(0deg)
+    }
+    58% {
+        transform: translate(0px, 5px) rotate(0deg)
+    }
+    60% {
+        transform: translate(0px, 6px) rotate(0deg)
+    }
+    62% {
+        transform: translate(0px, -3px) rotate(0deg)
+    }
+    64% {
+        transform: translate(0px, -3px) rotate(0deg)
+    }
+    66% {
+        transform: translate(0px, -9px) rotate(0deg)
+    }
+    68% {
+        transform: translate(0px, -8px) rotate(0deg)
+    }
+    70% {
+        transform: translate(0px, -7px) rotate(0deg)
+    }
+    72% {
+        transform: translate(0px, 5px) rotate(0deg)
+    }
+    74% {
+        transform: translate(0px, 5px) rotate(0deg)
+    }
+    76% {
+        transform: translate(0px, -6px) rotate(0deg)
+    }
+    78% {
+        transform: translate(0px, 8px) rotate(0deg)
+    }
+    80% {
+        transform: translate(0px, 2px) rotate(0deg)
+    }
+    82% {
+        transform: translate(0px, -8px) rotate(0deg)
+    }
+    84% {
+        transform: translate(0px, -6px) rotate(0deg)
+    }
+    86% {
+        transform: translate(0px, 5px) rotate(0deg)
+    }
+    88% {
+        transform: translate(0px, -9px) rotate(0deg)
+    }
+    90% {
+        transform: translate(0px, 1px) rotate(0deg)
+    }
+    92% {
+        transform: translate(0px, -9px) rotate(0deg)
+    }
+    94% {
+        transform: translate(0px, -8px) rotate(0deg)
+    }
+    96% {
+        transform: translate(0px, -3px) rotate(0deg)
+    }
+    98% {
+        transform: translate(0px, 1px) rotate(0deg)
+    }
+}
+@-webkit-keyframes shake-rotate {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    4% {
+        -webkit-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    6% {
+        -webkit-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    8% {
+        -webkit-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    10% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    12% {
+        -webkit-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    14% {
+        -webkit-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    16% {
+        -webkit-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    18% {
+        -webkit-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    20% {
+        -webkit-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    22% {
+        -webkit-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    24% {
+        -webkit-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    26% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    30% {
+        -webkit-transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    32% {
+        -webkit-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    34% {
+        -webkit-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    36% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    38% {
+        -webkit-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    40% {
+        -webkit-transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    42% {
+        -webkit-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    44% {
+        -webkit-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    46% {
+        -webkit-transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    48% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    52% {
+        -webkit-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    54% {
+        -webkit-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    56% {
+        -webkit-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    58% {
+        -webkit-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    60% {
+        -webkit-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    62% {
+        -webkit-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    64% {
+        -webkit-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    66% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    68% {
+        -webkit-transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    70% {
+        -webkit-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    72% {
+        -webkit-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    74% {
+        -webkit-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    76% {
+        -webkit-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    78% {
+        -webkit-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    80% {
+        -webkit-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    82% {
+        -webkit-transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    84% {
+        -webkit-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    86% {
+        -webkit-transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    88% {
+        -webkit-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    90% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    92% {
+        -webkit-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    94% {
+        -webkit-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    96% {
+        -webkit-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    98% {
+        -webkit-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+}
+@-ms-keyframes shake-rotate {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -ms-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    4% {
+        -ms-transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    6% {
+        -ms-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    8% {
+        -ms-transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    10% {
+        -ms-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    12% {
+        -ms-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    14% {
+        -ms-transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    16% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    18% {
+        -ms-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    20% {
+        -ms-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    22% {
+        -ms-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    24% {
+        -ms-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    26% {
+        -ms-transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    28% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    30% {
+        -ms-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    32% {
+        -ms-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    34% {
+        -ms-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    36% {
+        -ms-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    38% {
+        -ms-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    40% {
+        -ms-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    42% {
+        -ms-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    44% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    46% {
+        -ms-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    48% {
+        -ms-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    50% {
+        -ms-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    52% {
+        -ms-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    54% {
+        -ms-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    56% {
+        -ms-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    58% {
+        -ms-transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    60% {
+        -ms-transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    62% {
+        -ms-transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    64% {
+        -ms-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    66% {
+        -ms-transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    68% {
+        -ms-transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    70% {
+        -ms-transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    72% {
+        -ms-transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    74% {
+        -ms-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    76% {
+        -ms-transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    78% {
+        -ms-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    80% {
+        -ms-transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    82% {
+        -ms-transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    84% {
+        -ms-transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    86% {
+        -ms-transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    88% {
+        -ms-transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    90% {
+        -ms-transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    92% {
+        -ms-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    94% {
+        -ms-transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    96% {
+        -ms-transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    98% {
+        -ms-transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+}
+@keyframes shake-rotate {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    4% {
+        transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    6% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    8% {
+        transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    10% {
+        transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    12% {
+        transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    14% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    16% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    18% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    20% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    22% {
+        transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    24% {
+        transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    26% {
+        transform: translate(0px, 0px) rotate(-5.5deg)
+    }
+    28% {
+        transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    30% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    32% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    34% {
+        transform: translate(0px, 0px) rotate(0.5deg)
+    }
+    36% {
+        transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    38% {
+        transform: translate(0px, 0px) rotate(-6.5deg)
+    }
+    40% {
+        transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    42% {
+        transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    44% {
+        transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    46% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    48% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    50% {
+        transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    52% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    54% {
+        transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    56% {
+        transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    58% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    60% {
+        transform: translate(0px, 0px) rotate(6.5deg)
+    }
+    62% {
+        transform: translate(0px, 0px) rotate(1.5deg)
+    }
+    64% {
+        transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+    66% {
+        transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    68% {
+        transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    70% {
+        transform: translate(0px, 0px) rotate(-4.5deg)
+    }
+    72% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    74% {
+        transform: translate(0px, 0px) rotate(2.5deg)
+    }
+    76% {
+        transform: translate(0px, 0px) rotate(-2.5deg)
+    }
+    78% {
+        transform: translate(0px, 0px) rotate(-0.5deg)
+    }
+    80% {
+        transform: translate(0px, 0px) rotate(-3.5deg)
+    }
+    82% {
+        transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    84% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    86% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    88% {
+        transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    90% {
+        transform: translate(0px, 0px) rotate(5.5deg)
+    }
+    92% {
+        transform: translate(0px, 0px) rotate(4.5deg)
+    }
+    94% {
+        transform: translate(0px, 0px) rotate(-1.5deg)
+    }
+    96% {
+        transform: translate(0px, 0px) rotate(3.5deg)
+    }
+    98% {
+        transform: translate(0px, 0px) rotate(-7.5deg)
+    }
+}
+@-webkit-keyframes shake-opacity {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.7
+    }
+    10% {
+        -webkit-transform: translate(-4px, 1px) rotate(-1.5deg);
+        opacity: 0.1
+    }
+    20% {
+        -webkit-transform: translate(-4px, -4px) rotate(-2.5deg);
+        opacity: 0.4
+    }
+    30% {
+        -webkit-transform: translate(-3px, -5px) rotate(-1.5deg);
+        opacity: 0
+    }
+    40% {
+        -webkit-transform: translate(0px, 0px) rotate(0.5deg);
+        opacity: 0.6
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(-2.5deg);
+        opacity: 0.8
+    }
+    60% {
+        -webkit-transform: translate(-5px, -2px) rotate(1.5deg);
+        opacity: 0.4
+    }
+    70% {
+        -webkit-transform: translate(-1px, 3px) rotate(-0.5deg);
+        opacity: 0.1
+    }
+    80% {
+        -webkit-transform: translate(-2px, -2px) rotate(1.5deg);
+        opacity: 0.2
+    }
+    90% {
+        -webkit-transform: translate(-3px, -3px) rotate(1.5deg);
+        opacity: 0.3
+    }
+}
+@-ms-keyframes shake-opacity {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.9
+    }
+    10% {
+        -ms-transform: translate(0px, -4px) rotate(-1.5deg);
+        opacity: 0.9
+    }
+    20% {
+        -ms-transform: translate(-2px, 0px) rotate(0.5deg);
+        opacity: 0
+    }
+    30% {
+        -ms-transform: translate(-1px, 1px) rotate(-2.5deg);
+        opacity: 0.8
+    }
+    40% {
+        -ms-transform: translate(-2px, 4px) rotate(-1.5deg);
+        opacity: 0.9
+    }
+    50% {
+        -ms-transform: translate(-4px, 2px) rotate(-2.5deg);
+        opacity: 0.1
+    }
+    60% {
+        -ms-transform: translate(3px, 0px) rotate(0.5deg);
+        opacity: 0
+    }
+    70% {
+        -ms-transform: translate(-4px, -5px) rotate(-0.5deg);
+        opacity: 0
+    }
+    80% {
+        -ms-transform: translate(4px, -1px) rotate(1.5deg);
+        opacity: 0.7
+    }
+    90% {
+        -ms-transform: translate(4px, 0px) rotate(1.5deg);
+        opacity: 0.9
+    }
+}
+@keyframes shake-opacity {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.6
+    }
+    10% {
+        transform: translate(-2px, -1px) rotate(-0.5deg);
+        opacity: 0.5
+    }
+    20% {
+        transform: translate(-4px, 4px) rotate(1.5deg);
+        opacity: 0.4
+    }
+    30% {
+        transform: translate(-4px, -1px) rotate(-1.5deg);
+        opacity: 0.8
+    }
+    40% {
+        transform: translate(-2px, -1px) rotate(-2.5deg);
+        opacity: 0.3
+    }
+    50% {
+        transform: translate(-4px, 1px) rotate(-2.5deg);
+        opacity: 0.5
+    }
+    60% {
+        transform: translate(-2px, 4px) rotate(0.5deg);
+        opacity: 0.1
+    }
+    70% {
+        transform: translate(-3px, 1px) rotate(-0.5deg);
+        opacity: 0.4
+    }
+    80% {
+        transform: translate(0px, 0px) rotate(-0.5deg);
+        opacity: 0.5
+    }
+    90% {
+        transform: translate(2px, -1px) rotate(-2.5deg);
+        opacity: 0.8
+    }
+}
+@-webkit-keyframes shake-crazy {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.6
+    }
+    10% {
+        -webkit-transform: translate(14px, 19px) rotate(-1deg);
+        opacity: 0.8
+    }
+    20% {
+        -webkit-transform: translate(14px, 11px) rotate(5deg);
+        opacity: 0.7
+    }
+    30% {
+        -webkit-transform: translate(9px, -6px) rotate(-9deg);
+        opacity: 0.9
+    }
+    40% {
+        -webkit-transform: translate(0px, -19px) rotate(-6deg);
+        opacity: 0.6
+    }
+    50% {
+        -webkit-transform: translate(16px, 19px) rotate(9deg);
+        opacity: 0.7
+    }
+    60% {
+        -webkit-transform: translate(-11px, -10px) rotate(4deg);
+        opacity: 0.4
+    }
+    70% {
+        -webkit-transform: translate(-1px, 13px) rotate(-9deg);
+        opacity: 0.2
+    }
+    80% {
+        -webkit-transform: translate(-9px, -16px) rotate(0deg);
+        opacity: 0.1
+    }
+    90% {
+        -webkit-transform: translate(3px, 2px) rotate(-2deg);
+        opacity: 0.7
+    }
+}
+@-ms-keyframes shake-crazy {
+    0% {
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.8
+    }
+    10% {
+        -ms-transform: translate(18px, -4px) rotate(9deg);
+        opacity: 0.2
+    }
+    20% {
+        -ms-transform: translate(6px, 1px) rotate(8deg);
+        opacity: 0.8
+    }
+    30% {
+        -ms-transform: translate(-4px, 9px) rotate(8deg);
+        opacity: 0.2
+    }
+    40% {
+        -ms-transform: translate(-13px, 1px) rotate(7deg);
+        opacity: 0.5
+    }
+    50% {
+        -ms-transform: translate(-19px, 16px) rotate(-5deg);
+        opacity: 0.3
+    }
+    60% {
+        -ms-transform: translate(9px, 16px) rotate(7deg);
+        opacity: 0.3
+    }
+    70% {
+        -ms-transform: translate(-8px, -6px) rotate(-6deg);
+        opacity: 0.8
+    }
+    80% {
+        -ms-transform: translate(12px, 14px) rotate(-4deg);
+        opacity: 0.2
+    }
+    90% {
+        -ms-transform: translate(-12px, 12px) rotate(-8deg);
+        opacity: 0.2
+    }
+}
+@keyframes shake-crazy {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        opacity: 0.4
+    }
+    10% {
+        transform: translate(3px, 10px) rotate(-1deg);
+        opacity: 0.8
+    }
+    20% {
+        transform: translate(5px, 14px) rotate(-3deg);
+        opacity: 0.5
+    }
+    30% {
+        transform: translate(14px, 3px) rotate(4deg);
+        opacity: 0.6
+    }
+    40% {
+        transform: translate(-17px, 0px) rotate(9deg);
+        opacity: 0.7
+    }
+    50% {
+        transform: translate(1px, 17px) rotate(-4deg);
+        opacity: 0.7
+    }
+    60% {
+        transform: translate(9px, -4px) rotate(-10deg);
+        opacity: 0.2
+    }
+    70% {
+        transform: translate(13px, 7px) rotate(7deg);
+        opacity: 0.4
+    }
+    80% {
+        transform: translate(10px, 12px) rotate(9deg);
+        opacity: 0.1
+    }
+    90% {
+        transform: translate(0px, 3px) rotate(5deg);
+        opacity: 0.6
+    }
+}
+.imgSlide{
+margin-left: 7.8%;
+width: 84.5%;
+}
+.bubblemenu .bubble {
+display: inline;
+margin-left: 15px;
+cursor:pointer;
+}
+.bubblemenu .bubble > p {
+width: 150px;
+min-height: 100px;
+position: absolute;
+display: inline;
+margin-left: -120px;
+visibility:hidden;
+opacity: 0;
+margin-top: -100px;
+background: #ffffff;
+font-size:1em;
+
+/* Setting the transition property for all Browsers */
+-moz-transition: all 0.5s ease-in-out; /* Firefox */
+-webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+-o-transition: all 0.5s ease-in-out; /* Opera */
+transition: all 0.5s ease-in-out; /* Browsers that Support it */
+}
+.bubblemenu .bubble:hover > p {
+visibility:visible;
+opacity: 1;
+margin-left: -50px;
+margin-top: -150px;
+
+/* Setting the transition property for all Browsers */
+-moz-transition: all 0.5s ease-in-out; /* Firefox */
+-webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+-o-transition: all 0.5s ease-in-out;  /* Opera */
+transition: all 0.5s ease-in-out; /* Browsers that Support it */
+}
+p.speech{
+position: relative;
+width: 200px;
+height: 100px;
+text-align: center;
+line-height: 100px;
+background-color: #fff;
+border: 8px solid #666;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+-webkit-box-shadow: 2px 2px 4px #888;
+-moz-box-shadow: 2px 2px 4px #888;
+box-shadow: 2px 2px 4px #888;
+}
+p.speech:before{
+content: ' ';
+position: absolute;
+width: 0;
+height: 0;
+left: 30px;
+top: 100px;
+border: 25px solid;
+border-color: #666 transparent transparent #666;
+}
+p.speech:after{
+content: ' ';
+position: absolute;
+width: 0;
+height: 0;
+left: 38px;
+top: 100px;
+border: 15px solid;
+border-color: #fff transparent transparent #fff;
+}
+.appointmentTime{
+background-color: red;
+}
+</style>
+</head>
+<body>
+	<div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="">中北大学实验室预约系统</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="">实验室概览</a></li>
+                <li><a href="login.jsp">登录入口</a></li>
+                <li><a href="notebook.html">留言板</a></li>
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">快速链接<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.nuc.edu.cn/" target="_blank">中北大学首页</a></li>
+                    <li><a href="http://csce.nuc.edu.cn/" target="_blank">计算机与控制工程学院首页</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">技术前沿</li>
+                    <li><a href="http://www.csdn.net/" target="_blank">CSDN</a></li>
+                    <li><a href="http://www.iteye.com/" target="_blank">ITeYe</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide imgSlide" src="/images/bg01.jpg" alt="无法显示该图像">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>校园内景</h1>
+              <p>操场</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">查看更多>></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide imgSlide" src="/images/bg02.jpg" alt="无法显示该图像">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>校园内景</h1>
+              <p>旧篮球场</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">查看更多>></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide imgSlide" src="/images/bg03.jpg" alt="无法显示该图像">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>校园内景</h1>
+              <p>汾河</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">查看更多>></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="false"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="false"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+    <div class="container marketing">
+      <div class="row imgsCircle bubblemenu">
+        <div id="div0" class="col-lg-4 imgDiv">
+          <img class="img-circle" src="images/laboratory01.jpg" alt="无法显示该图像" width="200" height="200">
+          <h2>单片机实验室</h2>
+          <div class="bubble">
+	          <div class="datepicker shake shake-slow"></div>
+	          <p class="speech">赶紧预约吧！</p>
+          </div>
+        </div>
+        <div id="div1" class="col-lg-4 imgDiv">
+          <img class="img-circle" src="images/laboratory02.jpg" alt="无法显示该图像" width="200" height="200">
+          <h2>嵌入式实验室</h2>
+          <div class="bubble">
+	          <div class="datepicker shake shake-slow"></div>
+	          <p class="speech">赶紧预约吧！</p>
+          </div>
+        </div>
+        <div id="div2" class="col-lg-4 imgDiv">
+          <img class="img-circle" src="images/laboratory03.jpg" alt="无法显示该图像" width="200" height="200">
+          <h2>电力拖动实验室</h2>
+          <div class="bubble">
+	          <div class="datepicker shake shake-slow"></div>
+	          <p class="speech">赶紧预约吧！</p>
+          </div>
+        </div>
+      </div>
+
+	  <hr class="featurette-divider">
+		
+      <!-- 页脚 -->
+	  <footer class="navbar-bottom">
+	  	<p class="trademark">&copy;NUC test system by Gary 2016</p>
+	  </footer>
+	  
+    </div>
+
+	<script type="text/javascript">
+	    $('.carousel').carousel({  
+		    interval: 2000  
+		});
+	    
+	    $('.datepicker').datepicker({
+			dateFormat:'yy-mm-dd',
+			monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+			dayNamesMin:['一','二','三','四','五','六','日'],
+		});
+	    
+		$(function() {
+			$.ajax({
+				url:"/orderTimesForIndex.do",
+				type:"GET",
+				dataType:"json"
+			}).then(
+				function(map){
+					$.each(map, function(key, value) { 
+						$.each(value,function(index,orderTime){
+							if(orderTime!=""){
+								$("#div"+key+"").find(".ui-state-default:contains("+orderTime+"):first").parent().addClass("appointmentTime");
+							}
+						});
+					}); 
+				},function(){
+					alert('实验室预约信息加载失败');
+				}
+			);
+		});
+	</script>
+	
+</body>
+</html>

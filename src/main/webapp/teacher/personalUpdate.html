@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>教师个人设置</title>
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<script type="text/javascript" src="/js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<style type="text/css">
+body {
+	margin-top: 1em;
+}
+
+h2 {
+	text-align: center;
+}
+footer{
+	text-align: center;
+	background-color: #FE4365;
+	color: #fff;
+	height: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+.trademark{
+	display: inline-block;
+	margin-top: 5px;
+}
+</style>
+</head>
+<body>
+	<!-- 头部导航条 -->
+	<div class="navbar-wrapper">
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar"
+							aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a id="teacherName" class="navbar-brand" href="">教师管理页面</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="/teacher/laboratoryName/listForSelect.do">实验室信息管理</a></li>
+							<li><a href="/teacher/laboratoryName.html">实验室添加/删除</a></li>
+							<li><a href="/teacher/echarts.jsp">使用情况</a></li>
+							<li><a href="/teacher/notebook.html">留言板管理</a></li>
+							<li class="active"><a href="/teacher/personalUpdate.html">个人设置</a></li>
+							<li><a href="/logout.do">退出登录</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container col-lg-8 col-lg-offset-1">
+		<form id="update-form" class="form-horizontal">
+			<input id="update-id" type="hidden" />
+			<div class="form-group">
+				<label class="col-md-5 control-label">请输入新用户名：</label>
+				<div class="col-md-7">
+					<input id="update-adminName" class="form-control"
+						placeholder="userName" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-5 control-label">请输入新密码：</label>
+				<div class="col-md-7">
+					<input id="update-password" type="password" class="form-control"
+						placeholder="Password" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-offset-7 col-md-5">
+					<button id="update-btn" class="btn btn-success" type="button">更改设置</button>
+					<button class="btn btn-primary" type="reset">重新输入</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- 页脚 -->
+	<footer class="navbar-fixed-bottom">
+        <p class="trademark">&copy;NUC test system by Gary 2016</p>
+    </footer>
+	<script type="text/javascript">
+		var adminVo = {};
+		
+		$(function() {
+			showName();
+			
+			$('#update-btn').on('click', function() {
+				adminVo['adminName'] = $('#update-adminName').prop('value');
+				adminVo['password'] = $('#update-password').prop('value');
+				var adminVoJsonStr = JSON.stringify(adminVo);
+				$.ajax({
+					url : '/personalUpdate.do',
+					type : 'post',
+					dataType : 'json',
+					contentType : 'application/json',
+					data : adminVoJsonStr
+				}).done(function(messageVo) {
+					alert(messageVo.message);
+				}).fail(function() {
+					alert("修改失败！");
+				});
+				$('#update-form')[0].reset();
+			});
+		});
+		
+		var showName=function(){
+			$.ajax({
+				url:'/showName.do',
+				type:'POST',
+				dataType:'json',
+				contentType:'application/json',
+			}).then(function(loginedAdminVo){
+				$('#teacherName').html("<span>"+loginedAdminVo.adminName+"</span>老师，欢迎您！");
+			},function(){
+			});
+		}
+	</script>
+</body>
+</html>

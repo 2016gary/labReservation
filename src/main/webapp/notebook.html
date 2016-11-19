@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>留言板</title>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<style type="text/css">
+#save-form{
+	margin-top: 5em;
+}
+#load-div{
+	margin-top: 80px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	$(function(){
+		list();
+		$('#save-btn').on('click',save);
+	});
+</script>
+</head>
+<body>
+	<div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="">中北大学实验室预约系统</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">实验室概览</a></li>
+                <li><a href="login.jsp">登录入口</a></li>
+                <li class="active"><a href="notebook.html">留言板</a></li>
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">快速链接<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.nuc.edu.cn/" target="_blank">中北大学首页</a></li>
+                    <li><a href="http://csce.nuc.edu.cn/" target="_blank">计算机与控制工程学院首页</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">技术前沿</li>
+                    <li><a href="http://www.csdn.net/" target="_blank">CSDN</a></li>
+                    <li><a href="http://www.iteye.com/" target="_blank">ITeYe</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+    
+    <div class="container">
+    	<div id="notebook-div">
+    		<div id="load-div" class="text-center">
+    			<img src="images/loading.gif" />
+    		</div>
+    	</div>
+		<div class="col-lg-8 col-lg-offset-2">
+			<form id="save-form" class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">标题：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="title" name="title"
+							placeholder="留言标题">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">留言人：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="username" name="username"
+							placeholder="留言人">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">留言内容：</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" id="contentText" name="contentText" rows="5" cols="50" placeholder="请输入留言内容"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button id="save-btn" type="button" class="btn btn-primary">发表留言</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<div id="msg-dialog" title="信息">
+		<p></p>
+	</div>
+	
+	<script type="text/javascript">
+		// 定义消息对话框对象
+		var msgDialog = $('#msg-dialog').dialog({
+			autoOpen:false
+		});
+		
+		// 保存功能函数
+		var save = function(){
+			var jsonData = {};
+			// 遍历表单中的控件，把用户输入的数据封装成一个jsonData对象
+			$.each($('#save-form').serializeArray(),function(index,obj){
+				jsonData[obj.name]=obj.value;
+			});
+			// 把以上封装好的对象变为JSON字符串形式
+			var jsonStr = JSON.stringify(jsonData);
+	
+			// 调用后台资源
+			$.ajax({
+				url:"notebook/save.do",
+				type:"POST",
+				contentType:"application/json",
+				dataType:"json",
+				data:jsonStr
+			}).then(function(vo){
+				$('#msg-dialog>p').text(vo.msg);
+				msgDialog.dialog('open');
+				$('#title').val("");
+				$('#username').val("");
+				$('#contentText').val("");
+				list();
+			},function(){
+				$('#msg-dialog>p').text("留言失败");
+				msgDialog.dialog('open');
+			})
+		};
+
+		// 用于数据加载的功能函数
+		var list = function(){
+			$.ajax({
+				url:"/notebook/list.do",
+				type:"GET",
+				dataType:"json"
+			}).then(
+				function(map){
+					$('#notebook-div').empty();
+					$.each(map, function(key, value) { 
+						if(key==0){
+							$.each(value,function(index,nb){
+								var nbHtml = "<div id='"+nb.id+"'><h2>"+nb.title+"</h2><p>"+nb.createTimeStr+" by <strong>"+nb.username+"</strong></p><p style='word-break:break-word;'>"+nb.contentText+"</p><hr></div>";
+								$('#notebook-div').append(nbHtml);
+							});
+						}
+						if(key==1){
+							$.each(value,function(index,vo){
+								var responseHtml="<div class='row'><div class='col-lg-5 pull-right'><label>留言回复：</label><p style='word-break:break-word;'>"+vo.contentText+"</p></div></div><hr>";
+								$("#"+vo.notebookId).append(responseHtml); 
+							});
+						}
+					}); 
+				}
+			);
+		}
+	</script>
+</body>
+</html>
