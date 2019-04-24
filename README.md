@@ -2,6 +2,16 @@
 ### 该系统主要实现了教师根据教学的实际情况进行教学以外的实验室开放，发布以及管理学生预约的开放时间，学生查询实验室预约信息、预约开放实验室，系统自动审核学生的预约请求，并为教师生成图表分析实验室的实时使用情况，系统定时检验学生预约状态自动发送邮件通知。
 <img src="./readme-imgs/labReservation-arc.png"  alt="无法显示该图片" />
 
+## 主页功能
+### 实验室近一个月预约时间自动显示：
+<img src="./readme-imgs/index-status.png"  alt="无法显示该图片" />
+
+### 教师与学生登录：
+<img src="./readme-imgs/index-login.png"  alt="无法显示该图片" />
+
+### 注册：
+<img src="./readme-imgs/index-reg.png"  alt="无法显示该图片" />
+
 ## 教师发布与管理实验室预约信息等功能
 ### 信息发布与查询：
 <img src="./readme-imgs/teacher-select.png"  alt="无法显示该图片" />
@@ -50,13 +60,3 @@
 
 ## 自动发送邮件通知功能
 <img src="./readme-imgs/email.png"  alt="无法显示该图片" />
-
-## 主页功能
-### 实验室近一个月预约时间自动显示：
-<img src="./readme-imgs/index-status.png"  alt="无法显示该图片" />
-
-### 教师与学生登录：
-<img src="./readme-imgs/index-login.png"  alt="无法显示该图片" />
-
-### 注册：
-<img src="./readme-imgs/index-reg.png"  alt="无法显示该图片" />
