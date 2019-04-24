@@ -25,3 +25,38 @@
 
 ### 留言板管理：
 <img src="./readme-imgs/teacher-board.png"  alt="无法显示该图片" />
+
+## 学生实验室预约与查询等功能
+### 实验室预约与查询：
+<img src="./readme-imgs/student-select.png"  alt="无法显示该图片" />
+
+### 实验室预约状态查询：
+<img src="./readme-imgs/student-status.png"  alt="无法显示该图片" />
+
+## 系统管理功能
+### 学生预约状态自动审核：
+<img src="./readme-imgs/status-check1.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check2.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check3.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check4.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check5.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check6.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check7.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check8.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check9.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check10.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check11.png"  alt="无法显示该图片" />
+<img src="./readme-imgs/status-check12.png"  alt="无法显示该图片" />
+
+## 自动发送邮件通知功能
+<img src="./readme-imgs/email.png"  alt="无法显示该图片" />
+
+## 主页功能
+### 实验室近一个月预约时间自动显示：
+<img src="./readme-imgs/index-status.png"  alt="无法显示该图片" />
+
+### 教师与学生登录：
+<img src="./readme-imgs/index-login.png"  alt="无法显示该图片" />
+
+### 注册：
+<img src="./readme-imgs/index-reg.png"  alt="无法显示该图片" />
