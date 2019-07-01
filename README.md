@@ -62,4 +62,4 @@
 <img src="./readme-imgs/email.png"  alt="无法显示该图片" />
 
 ## 注：
-### pom文件中使用了一个第三方组件，地址：[forten-utils](https://github.com/2016gary/forten-component "forten-utils<")
+### pom文件中使用了一个第三方组件，地址：[forten-utils](https://github.com/2016gary/forten-component "forten-utils")
